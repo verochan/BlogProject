@@ -1,0 +1,29 @@
+{
+  "name": "blogproject",
+  "description": "Blog made using AngularJS",
+  "main": "app.js",
+  "authors": [
+    "Verónica Valls Alemany"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "blog",
+    "post",
+    "angular",
+    "frontend"
+  ],
+  "homepage": "",
+  "dependencies": {
+    "angular": "^1.5.7",
+    "bootstrap": "^3.3.6"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/js/bootstrap.js",
+        "dist/css/bootstrap.css",
+        "less/bootstrap.less"
+          ]
+      }
+  }
+}
