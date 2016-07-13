@@ -48,13 +48,15 @@ Gulpfile.js
 
 Added this code to bower.json, due to wiredep not injecting the CSS bootstrap in the HTML file:
 
-	```"overrides": {<br />
-	  "bootstrap": {<br />
-	    "main": [<br />
-	      "dist/js/bootstrap.js",<br />
-	      "dist/css/bootstrap.css",<br />
-	      "less/bootstrap.less"<br />
-	        ]<br />
-	    }<br />
-	}```
+	```
+	"overrides": {  
+	  "bootstrap": {  
+	    "main": [  
+	      "dist/js/bootstrap.js",  
+	      "dist/css/bootstrap.css",  
+	      "less/bootstrap.less"  
+	        ]  
+	    }  
+	}
+	```
 
