@@ -4,36 +4,36 @@ This blog project is based on the project developed on Carlos Azaustre's book "D
 ###Installed Dependencies and Libraries
 
 ```
-npm install -g gulp (tasks launcher)<br />
-npm install -g bower <br />
+npm install -g gulp (tasks launcher)  
+npm install -g bower  
 ```
 
 ####_(Dependencies related with automatize Javascript code correction, minifying CSS, creation of a webserver, realtime browser updates...)_
 
 ```
-npm install --save-dev gulp<br />
-npm install --save-dev gulp-connect <br />
-npm install --save-dev connect-history-api-fallback<br />
-npm install --save-dev gulp-jshint<br />
-npm install --save-dev gulp-useref<br />
-npm install --save-dev gulp-if<br />
-npm install --save-dev gulp-uglify<br />
-npm install --save-dev gulp-minify-css<br />
-npm install --save-dev gulp-stylus<br />
-npm install --save-dev nib <br />
-npm install --save-dev jshint-stylish
+npm install --save-dev gulp  
+npm install --save-dev gulp-connect  
+npm install --save-dev connect-history-api-fallback  
+npm install --save-dev gulp-jshint  
+npm install --save-dev gulp-useref  
+npm install --save-dev gulp-if  
+npm install --save-dev gulp-uglify  
+npm install --save-dev gulp-minify-css  
+npm install --save-dev gulp-stylus  
+npm install --save-dev nib  
+npm install --save-dev jshint-stylish  
 
-bower install --save angular-route ($routeProvider)<br />
-bower install --save angular-resource (ajax $resource cleaner way to GET/POST)
+bower install --save angular-route ($routeProvider)  
+bower install --save angular-resource (ajax $resource cleaner way to GET/POST)  
 ```
 
 ####_(Dependencies related with injection of CSS & Javascript files and Bower libraries to the HTML page)_
 
 ```
-npm install --save-dev gulp-inject<br />
+npm install --save-dev gulp-inject  
 npm install --save-dev wiredep
 
-bower install --save angular<br />
+bower install --save angular  
 bower install --save bootstrap
 ```
 
