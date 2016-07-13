@@ -1,9 +1,12 @@
-Installed Dependencies and Libraries
+###BlogProject
+This blog project is based on the project developed on Carlos Azaustre's book "Desarrollo web ágil con AngularJS" but using a more complete project structure, components and any AngularJS 1.5.7 newer and advisable features which will be featured in a similar way in AngularJS 2.
+
+###Installed Dependencies and Libraries
 
 npm install -g gulp (tasks launcher)
 npm install -g bower 
 
-(Dependencies related with automatize Javascript code correction, minifying CSS, creation of a webserver, realtime browser updates...)
+####_(Dependencies related with automatize Javascript code correction, minifying CSS, creation of a webserver, realtime browser updates...)_
 
 npm install --save-dev gulp
 npm install --save-dev gulp-connect 
@@ -17,12 +20,10 @@ npm install --save-dev gulp-stylus
 npm install --save-dev nib 
 npm install --save-dev jshint-stylish
 
-$ bower install --save angular-route ($routeProvider)
-$ bower install --save angular-resource (ajax $resource cleaner)
+bower install --save angular-route ($routeProvider)
+bower install --save angular-resource (ajax $resource cleaner way to GET/POST)
 
-Fragmento de: Unknown. “Desarrollo web ágil con ÁngularJS”. iBooks. 
-
-(Dependencies related with injection of CSS & Javascript files and Bower libraries to the HTML page)
+####_(Dependencies related with injection of CSS & Javascript files and Bower libraries to the HTML page)_
 
 npm install --save-dev gulp-inject
 npm install --save-dev wiredep
@@ -30,7 +31,7 @@ npm install --save-dev wiredep
 bower install --save angular
 bower install --save bootstrap
 
-Config Files
+###Config Files
 
 package.json (npm init)
 bower.json (bower init)
@@ -39,10 +40,10 @@ bower.json (bower init)
 .jshintrc
 Gulpfile.js
 
-Bugs modifications
+###Bugs modifications
 
 Added this code to bower.json, due to wiredep not injecting the CSS bootstrap in the HTML file:
-	"overrides": {
+	'"overrides": {
 	  "bootstrap": {
 	    "main": [
 	      "dist/js/bootstrap.js",
@@ -50,5 +51,5 @@ Added this code to bower.json, due to wiredep not injecting the CSS bootstrap in
 	      "less/bootstrap.less"
 	        ]
 	    }
-	}
+	}'
 
