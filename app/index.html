@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="es-ES">
   <head>
+  	<base href="/">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
@@ -12,9 +13,10 @@
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
     <!-- inject:css -->
+    <link rel="stylesheet" href="/stylesheets/main.css">
     <!-- endinject -->
   </head>
-  <body>
+  <body ng-app="blog">
     <!--[if lt IE 8]>
         <p class="browsehappy">
         Estás usando un navegador <strong>desactualizado</strong>.
@@ -23,7 +25,11 @@
       </p>
     <![endif]-->
 
-    <p>Hola Mundo! Esto es HTML5 Boilerplate.</p>
+	   <div class="container-fluid">
+	    <div class="row">
+	      <section class="col-sm-9" ng-view></section>
+	    </div>
+	  </div>
 
     <!-- Google Analytics: Cambia UA-XXXXX-X por el ID de tu sitio -->
     <script>
@@ -38,18 +44,23 @@
     <script src="lib/angular/angular.js"></script>
     <script src="lib/jquery/dist/jquery.js"></script>
     <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="lib/angular-resource/angular-resource.js"></script>
     <!-- endbower -->
     <!-- inject:js -->
     <script src="/scripts/app.js"></script>
+    <script src="/modules/posts/controllers.js"></script>
+    <script src="/modules/posts/module.js"></script>
+    <script src="/modules/posts/services.js"></script>
     <!-- endinject -->
   </body>
-</html>pt>
+</html>
     <!-- endinject -->
   </body>
-</html>pt>
+</html>
     <!-- endinject -->
   </body>
-</html>pt>
+</html>
     <!-- endinject -->
   </body>
 </html>

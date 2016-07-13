@@ -15,7 +15,8 @@ var gulp    = require('gulp'),
 // Busca en las carpetas de estilos y javascript los archivos que hayamos creado
 // para inyectarlos en el index.html
 gulp.task('inject', function() {
-  var sources = gulp.src([ './app/scripts/**/*.js', './app/stylesheets/**/*.css' ]);
+  var sources = gulp.src([ './app/scripts/**/*.js', './app/stylesheets/**/*.css',
+                            './app/modules/**/*.js'  ]);
   return gulp.src('index.html', { cwd: './app' })
     .pipe(inject(sources, {
       //read: false,
@@ -46,7 +47,7 @@ gulp.task('server', function() {
 
 // Busca errores en el JS y nos los muestra por pantalla
 gulp.task('jshint', function() {
-  return gulp.src('./app/scripts/**/*.js')
+  return gulp.src(['./app/scripts/**/*.js', './app/modules/**/*.js'])
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(jshint.reporter('fail'));
@@ -69,8 +70,10 @@ gulp.task('html', function() {
 // Vigila cambios que se produzcan en el código
 // y lanza las tareas relacionadas
 gulp.task('watch', function() {
+  
+  gulp.watch(['./app/scripts/**/*.js','./app/modules/**/*.js', './Gulpfile.js'], ['jshint', 'inject']);
+  gulp.watch(['./app/**/*.html'], ['html']);
   gulp.watch(['./app/stylesheets/**/*.styl'], ['css', 'inject']);
-  gulp.watch(['./app/scripts/**/*.js', './Gulpfile.js'], ['jshint', 'inject']);
   gulp.watch(['./bower.json'], ['wiredep']);
 });
 

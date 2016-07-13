@@ -17,6 +17,11 @@ npm install --save-dev gulp-stylus
 npm install --save-dev nib 
 npm install --save-dev jshint-stylish
 
+$ bower install --save angular-route ($routeProvider)
+$ bower install --save angular-resource (ajax $resource cleaner)
+
+Fragmento de: Unknown. “Desarrollo web ágil con ÁngularJS”. iBooks. 
+
 (Dependencies related with injection of CSS & Javascript files and Bower libraries to the HTML page)
 
 npm install --save-dev gulp-inject
