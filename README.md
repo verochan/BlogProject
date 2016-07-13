@@ -48,7 +48,7 @@ Gulpfile.js
 
 Added this code to bower.json, due to wiredep not injecting the CSS bootstrap in the HTML file:
 
-	```
+```
 	"overrides": {  
 	  "bootstrap": {  
 	    "main": [  
@@ -58,5 +58,5 @@ Added this code to bower.json, due to wiredep not injecting the CSS bootstrap in
 	        ]  
 	    }  
 	}
-	```
+```
 
