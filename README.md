@@ -3,12 +3,14 @@ This blog project is based on the project developed on Carlos Azaustre's book "D
 
 ###Installed Dependencies and Libraries
 
+```
 npm install -g gulp (tasks launcher)<br />
 npm install -g bower <br />
-
+```
 
 ####_(Dependencies related with automatize Javascript code correction, minifying CSS, creation of a webserver, realtime browser updates...)_
 
+```
 npm install --save-dev gulp<br />
 npm install --save-dev gulp-connect <br />
 npm install --save-dev connect-history-api-fallback<br />
@@ -23,25 +25,26 @@ npm install --save-dev jshint-stylish
 
 bower install --save angular-route ($routeProvider)<br />
 bower install --save angular-resource (ajax $resource cleaner way to GET/POST)
-
+```
 
 ####_(Dependencies related with injection of CSS & Javascript files and Bower libraries to the HTML page)_
 
+```
 npm install --save-dev gulp-inject<br />
 npm install --save-dev wiredep
 
 bower install --save angular<br />
 bower install --save bootstrap
-
+```
 
 ###Config Files
 
-package.json (npm init)<br />
-bower.json (bower init)<br />
-.bowerrc<br />
-.editorconfig<br />
-.jshintrc<br />
-Gulpfile.js
+* package.json (npm init)<br />
+* bower.json (bower init)<br />
+* .bowerrc<br />
+* .editorconfig<br />
+* .jshintrc<br />
+* Gulpfile.js
 
 
 ###Bugs modifications
