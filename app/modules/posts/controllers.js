@@ -3,17 +3,17 @@
 	'use strict';
 
 	angular
-		.module('posts.controllers', ['posts.services', 'users.services']);
+		.module('posts.controllers', ['posts.services', 'users.services', 'comments.services']);
 
 	function PostListController(Post)
 	{
 		this.posts= Post.query();
 	}
 
-	function PostDetailController($routeParams, Post, User)
+	function PostDetailController($routeParams, Post, User, Comment)
 	{
 		this.post={};
-		//this.comment={};
+		this.comment={};
 		this.user={};
 
 		var self=this;
@@ -31,8 +31,7 @@
 				}
 			);
 
-		//this.comments=Comment.query({ postId: $routeParams.postId });	
-
+		this.comments=Comment.query({ postId: $routeParams.postId });	
 	}
 
 	  angular
