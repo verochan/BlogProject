@@ -63,3 +63,18 @@ Added this code to bower.json, due to wiredep not injecting the CSS bootstrap in
 	}
 ```
 
+Changed historyApiFallback from this: ```return [ historyApiFallback ]``` to this: ```return [ historyApiFallback() ]``` (on newer versions of connect-history-api-fallback it changed to be called as a function), final code:
+
+```
+gulp.task('server', function() {
+  connect.server({
+    root: './app',
+    //hostname: '0.0.0.0',
+    //port: 8080,
+    livereload: true,
+    middleware: function(server, opt) {
+      return [ historyApiFallback() ];
+    }
+  });
+});
+```

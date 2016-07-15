@@ -38,10 +38,10 @@ gulp.task('server', function() {
     root: './app',
     //hostname: '0.0.0.0',
     //port: 8080,
-    livereload: true
-    // middleware: function(connect, opt) {
-    //   return [ historyApiFallback ];
-    // }
+    livereload: true,
+    middleware: function(server, opt) {
+      return [ historyApiFallback() ];
+    }
   });
 });
 
