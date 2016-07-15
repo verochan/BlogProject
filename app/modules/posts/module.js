@@ -10,6 +10,9 @@
 	    })
 	    .when('/post/:postId', {
 	      template: '<my-post-detail></my-post-detail>'
+	    })
+	    .when('/new', {
+	    	template: '<my-new-post></my-new-post>'
 	    });
 	}
 
@@ -23,6 +26,11 @@
 			    controller: 'PostDetailController',
 			    controllerAs: 'postdetail',
 			    templateUrl: 'modules/posts/views/post-detail.tpl.html'
+			  })
+			.component('myNewPost', {
+			    controller: 'PostCreateController',
+			    controllerAs: 'postcreate',
+			    templateUrl: 'modules/posts/views/post-create.tpl.html'
 			  })
 			.config(config);  
 
