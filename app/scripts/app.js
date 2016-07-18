@@ -2,5 +2,5 @@
 {
 	'use strict';
 
-	angular.module('blog', ['posts']);
+	angular.module('blog', ['posts', 'users']);
 })();
