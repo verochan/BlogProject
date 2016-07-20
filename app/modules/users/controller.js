@@ -6,15 +6,28 @@
 
 	function UsersListController(User)
 	{
+		this.users={};
+		var self=this;
 
-		this.users=User.query();
+		User.query()
+			.$promise.then(
+				function(data)
+				{
+					self.users=data;
+				},
+				function(error)
+				{
+					console.log(error);
+				}
+			);
 	}
 
 	function UserDetailController($routeParams, User)
 	{
-		console.log('userID: '+$routeParams.userId);
+		this.user={};
 		var self=this;
-		this.user= User.query({ id: $routeParams.userId})
+
+		User.query({ id: $routeParams.userId})
 		.$promise.then(
 				function(data)
 				{
@@ -25,7 +38,6 @@
 					console.log(error);
 				}
 			);
-
 	}
 
 	angular

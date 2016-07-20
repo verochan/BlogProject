@@ -7,13 +7,26 @@
 
 	function PostListController(Post)
 	{
-		this.posts= Post.query();
+		this.posts={};
+		var self=this;
+
+		Post.query()
+			.$promise.then(
+				function(data)
+				{
+					self.posts=data;
+				},
+				function(error)
+				{
+					console.log(error);
+				}
+			);
 	}
 
 	function PostDetailController($routeParams, Post, User, Comment)
 	{
 		this.post={};
-		this.comment={};
+		this.comments={};
 		this.user={};
 
 		var self=this;
@@ -31,7 +44,17 @@
 				}
 			);
 
-		this.comments=Comment.query({ postId: $routeParams.postId });	
+		Comment.query({ postId: $routeParams.postId })
+			.$promise.then(
+				function(data)
+				{
+					self.comments=data;
+				},
+				function(error)
+				{
+					console.log(error);
+				}
+			);
 	}
 
 	function PostCreateController (Post) 
