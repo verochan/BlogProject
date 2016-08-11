@@ -3,28 +3,18 @@
     <h1>{{ postdetail.post.title }}</h1>
   </header>
   <p class="blog-post-body">
+    <img src="http://placekitten.com/995/300" />
     {{ postdetail.post.body }}
   </p>
   <post-detail-user data="postdetail.user[0]">
   </post-detail-user>
 </article>
-<aside class="comments">
+<article class="blog-post-comments">
   <header class="comments-header">
-    <h3>
-      <span class="fa fa-comments"></span>
-      Commentarios
-    </h3>
+      <span class="subtitle"><i class="fa fa-comments"></i> <b>Comentarios</b></span>
   </header>
   <ul class="comments-list">
-        <!-- <li ng-repeat="comment in postdetail.comments">
-          <span class="fa fa-user"></span>
-         <span class="comment-author">{{ comment.email }}</span>
-          <p class="comment-body">
-            {{ comment.body }}
-          </p>
-        </li> -->
-
-    <post-detail-comments ng-repeat="comment in postdetail.comments" data="comment">
-    </post-detail-comments>
+      <post-detail-comments ng-repeat="comment in postdetail.comments" data="comment">
+      </post-detail-comments>
   </ul>
-</aside>
+</article>

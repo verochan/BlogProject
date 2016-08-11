@@ -1,5 +1,11 @@
-<ul class="blog-post-list">
- 	<li class="blog-post-link" ng-repeat="post in postlist.posts">
-   		<a ng-href="/post/{{ post.id }}">{{ post.title }}</a>
+<ul class="flex-container blog-post-list">
+ 	<li class="flex-item blog-post-item" ng-repeat="post in postlist.posts">
+		<div class="blog-post-img">
+			<img src='https://placekitten.com/430/300' />
+		</div>
+		<div class="blog-post-link">
+			<i class="fa fa-file-text-o icon" aria-hidden="true"></i>
+			<a ng-href="/post/{{ post.id }}">{{ post.title }}</a>
+		</div>
  	</li>
 </ul>

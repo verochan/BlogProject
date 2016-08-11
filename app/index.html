@@ -10,11 +10,12 @@
     <!-- Coloca favicon.ico y apple-touch-icon(s) en el directorio raíz -->
     <link rel="stylesheet" href="/stylesheets/main.css">
     <!-- bower:css -->
-    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
     <!-- inject:css -->
     <link rel="stylesheet" href="/stylesheets/main.css">
     <!-- endinject -->
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+
   </head>
   <body ng-app="blog">
     <!--[if lt IE 8]>
@@ -25,10 +26,21 @@
       </p>
     <![endif]-->
 
-	   <div class="container-fluid">
-	    <div class="row">
-	      <section class="col-sm-9" ng-view></section>
-	    </div>
+	   <div class="wrapper">
+        <header class="header">
+          <div class="title">
+            Blog Project
+          </div>
+          <nav>
+            <ul class="navigation">
+              <li><a href="/">Home</a></li>
+              <li><a href="/new">New</a></li>
+            </ul>
+          </nav>
+        </header>
+	      <section class="main" ng-view></section>
+	      <aside class="aside-right">aside</aside>
+        <footer class="footer">Blog Project by Verónica Valls</footer>
 	  </div>
 
     <!-- Google Analytics: Cambia UA-XXXXX-X por el ID de tu sitio -->
@@ -42,8 +54,6 @@
     </script>
     <!-- bower:js -->
     <script src="lib/angular/angular.js"></script>
-    <script src="lib/jquery/dist/jquery.js"></script>
-    <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
     <script src="lib/angular-route/angular-route.js"></script>
     <script src="lib/angular-resource/angular-resource.js"></script>
     <!-- endbower -->

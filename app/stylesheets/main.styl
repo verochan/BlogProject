@@ -1,3 +1,148 @@
+@import 'fonts'
+
+//BASIC SETTINGS
+
+a 
+    color #7E644B
+    text-decoration none
+    
+a:hover
+    color #3E4A40
+
+ul 
+    padding 0 
+    list-style none     
+
+.icon
+    color #3E4A40
+
+
+//COMMON PARTS
+
 body
-  background-color white;
-  color black;
+    font-size 16px
+    background-color #C4C9A8 
+
+.wrapper
+    display flex
+    flex-direction row
+    flex-wrap wrap
+
+.wrapper > * 
+    padding: 10px
+    flex: 1 100%
+
+.header
+    background #3E4A40
+    font-family 'Lobster'
+    color #A57F68
+    font-size 3em
+    padding 0 0.3em 0.2em 0.3em
+    display flex
+    flex-direction row
+    flex-wrap wrap
+    justify-content space-between   
+
+.title
+    display flex
+    flex-direction row
+    flex-wrap nowrap
+    justify-content flex-start      
+
+.navigation
+    display flex
+    flex-direction row
+    flex-wrap wrap
+    justify-content flex-end
+    margin 0.2em 0 0 0
+
+.navigation a
+    padding 0.5em
+    text-align center   
+    display block
+    font-size 0.5em
+    color #8B8F76
+
+.navigation a:hover
+    color #A57F68   
+
+.aside-right
+    background #8B8F76
+
+.footer
+    background #A57F68
+    color #3E4A40
+    font-family 'Lobster'
+    text-align center
+
+@media all and (min-width 600px) 
+    .aside-right  
+        flex 1 auto 
+
+@media all and (min-width 800px) 
+    .main
+        flex 3 0px
+    .main     
+        order 1 
+    .aside-right  
+        order 2 
+    .footer   
+        order 3
+
+@media all and (max-width 800px)
+    .navigation
+        justify-content space-around
+    .header
+        justify-content space-between
+
+@media all and (max-width 600px)
+    .navigation
+        flex-flow column wrap
+        padding 0   
+    .header
+        flex-flow column wrap
+        padding 0
+
+//BLOG POST LIST
+
+.flex-container
+    display flex
+    flex-direction row
+    flex-wrap wrap
+    justify-content space-around
+    align-items center
+    align-content flex-start
+
+.flex-item
+    width:430px
+    margin: auto
+
+.blog-post-item
+    margin 0em 0em .5em 0em
+    border-bottom 3px dashed #A57F68
+    background-color #979A85
+
+.blog-post-link
+    font-family 'Oswald'
+    padding 0.5em 0.5em 0.5em 0.5em
+
+//BLOG POST
+
+.blog-post-header
+    font-family 'Oswald'
+    color #7E644B   
+
+.blog-post-body, .blog-post-user, .blog-post-comments   
+    font-family 'PoiretOne' 
+    color #3E4A40
+
+.comments-list
+    list-style-type none
+
+.subtitle
+    background #8B8F76
+    font-family 'PoiretOne' 
+    color #3E4A40
+    padding 0.2em
+    width 99%
+    display block
