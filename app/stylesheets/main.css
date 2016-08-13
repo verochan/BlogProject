@@ -30,6 +30,10 @@ ul {
 .icon {
   color: #3e4a40;
 }
+img {
+  width: 100%;
+  height: auto;
+}
 body {
   font-size: 16px;
   background-color: #c4c9a8;
@@ -131,19 +135,49 @@ body {
   align-items: center;
   align-content: flex-start;
 }
-.flex-item {
+.flex-item-postlist {
   width: 430px;
   margin: auto;
 }
-.blog-post-item {
+.flex-item {
+  margin: auto;
+}
+.blog-post-item,
+.users-list {
   margin: 0em 0em 0.5em 0em;
   border-bottom: 3px dashed #a57f68;
   background-color: #979a85;
 }
-.blog-post-link {
+.blog-post-link,
+.user-link {
   font-family: 'Oswald';
   padding: 0.5em 0.5em 0.5em 0.5em;
 }
+.simple-pagination {
+  font-family: 'Oswald';
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  align-content: center;
+}
+.simple-pagination p {
+  margin: 0 0.5em 0 0;
+}
+.simple-pagination__items {
+  color: #7e644b;
+}
+.simple-pagination__pages {
+  color: #3e4a40;
+}
+.simple-pagination__page-limit a {
+  color: #3e4a40;
+}
+.simple-pagination__page-limit a:hover {
+  color: #7e644b;
+}
+.simple-pagination__button,
 .blog-post-header {
   font-family: 'Oswald';
   color: #7e644b;
