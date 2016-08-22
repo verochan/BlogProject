@@ -58,18 +58,17 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.title {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
+.main {
+  flex-flow: row wrap;
+  justify-content: space-around;
 }
 .navigation {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: no-wrap;
   justify-content: flex-end;
   margin: 0.2em 0 0 0;
+  padding: 0;
 }
 .navigation a {
   padding: 0.5em;
@@ -90,39 +89,39 @@ body {
   font-family: 'Lobster';
   text-align: center;
 }
-@media all and (min-width: 600px) {
+@media all and (min-width: 480px) {
   .aside-right {
     flex: 1 auto;
   }
-}
-@media all and (min-width: 800px) {
   .main {
     flex: 3 0px;
   }
-  .main {
+  .header {
     order: 1;
   }
-  .aside-right {
+  .main {
     order: 2;
   }
-  .footer {
+  .aside-right {
     order: 3;
   }
-}
-@media all and (max-width: 800px) {
+  .footer {
+    order: 4;
+  }
   .navigation {
     justify-content: space-around;
   }
+}
+@media all and (max-width: 767px) {
   .header {
-    justify-content: space-between;
+    justify-content: space-around;
   }
 }
-@media all and (max-width: 600px) {
-  .navigation {
-    flex-flow: column wrap;
-    padding: 0;
+@media all and (max-width: 480px) {
+  .title {
+    text-align: center;
   }
-  .header {
+  .navigation {
     flex-flow: column wrap;
     padding: 0;
   }
@@ -136,7 +135,6 @@ body {
   align-content: flex-start;
 }
 .flex-item-postlist {
-  width: 430px;
   margin: auto;
 }
 .flex-item {

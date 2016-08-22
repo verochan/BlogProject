@@ -47,18 +47,17 @@ body
     flex-wrap wrap
     justify-content space-between   
 
-.title
-    display flex
-    flex-direction row
-    flex-wrap nowrap
-    justify-content flex-start      
+.main
+    flex-flow row wrap
+    justify-content space-around
 
 .navigation
     display flex
     flex-direction row
-    flex-wrap wrap
+    flex-wrap no-wrap
     justify-content flex-end
     margin 0.2em 0 0 0
+    padding 0
 
 .navigation a
     padding 0.5em
@@ -78,34 +77,34 @@ body
     color #3E4A40
     font-family 'Lobster'
     text-align center
-
-@media all and (min-width 600px) 
+    
+@media all and (min-width : 480px) 
     .aside-right  
         flex 1 auto 
-
-@media all and (min-width 800px) 
     .main
         flex 3 0px
+    .header
+        order 1    
     .main     
-        order 1 
-    .aside-right  
         order 2 
+    .aside-right  
+        order 3 
     .footer   
-        order 3
-
-@media all and (max-width 800px)
+        order 4 
     .navigation
         justify-content space-around
-    .header
-        justify-content space-between
 
-@media all and (max-width 600px)
+@media all and (max-width : 767px) 
+    .header
+        justify-content space-around
+
+@media all and (max-width : 480px)
+    .title
+        text-align center   
     .navigation
         flex-flow column wrap
-        padding 0   
-    .header
-        flex-flow column wrap
-        padding 0  
+        padding 0
+        
 
 //BLOG POST LIST & USERS LIST
 
@@ -118,7 +117,6 @@ body
     align-content flex-start
 
 .flex-item-postlist
-    width:430px
     margin: auto
 
 .flex-item
@@ -132,7 +130,6 @@ body
 .blog-post-link, .user-link
     font-family 'Oswald'
     padding 0.5em 0.5em 0.5em 0.5em
- 
 
 //PAGINATOR
 
