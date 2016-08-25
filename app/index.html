@@ -40,7 +40,9 @@
           </nav>
         </header>
 	      <section class="main" ng-view></section>
-	      <aside class="aside-right">aside</aside>
+	      <aside class="aside-right">
+          aside
+        </aside>
         <footer class="footer">The Kitty Blog Project by Verónica Valls</footer>
 	  </div>
 
@@ -53,12 +55,21 @@
       r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
       ga('create','UA-XXXXX-X','auto');ga('send','pageview');
     </script>
+    <script src='http://maps.googleapis.com/maps/api/js?key=AIzaSyBp6go3s6TUC8CHNEX5l_ksB24thzlNzt4'></script>
     <!-- bower:js -->
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular-route/angular-route.js"></script>
     <script src="lib/angular-resource/angular-resource.js"></script>
-    <script src="lib/angular-simple-pagination/dist/angular-simple-pagination.js"></script>
+    <script src="lib/angular-simple-logger/dist/angular-simple-logger.js"></script>
+    <script src="lib/lodash/lodash.js"></script>
+    <script src="lib/markerclustererplus/src/markerclusterer.js"></script>
+    <script src="lib/google-maps-utility-library-v3-markerwithlabel/dist/markerwithlabel.js"></script>
+    <script src="lib/google-maps-utility-library-v3-infobox/dist/infobox.js"></script>
+    <script src="lib/google-maps-utility-library-v3-keydragzoom/dist/keydragzoom.js"></script>
+    <script src="lib/js-rich-marker/src/richmarker.js"></script>
+    <script src="lib/angular-google-maps/dist/angular-google-maps.js"></script>
     <!-- endbower -->
+    <script src="lib/angular-simple-pagination/dist/angular-simple-pagination.js"></script>
     <!-- inject:js -->
     <script src="/scripts/app.js"></script>
     <script src="/modules/comments/services.js"></script>

@@ -2,7 +2,7 @@
 {
 	'use strict';
 
-	function config($locationProvider, $routeProvider)
+	function config($locationProvider, $routeProvider, uiGmapGoogleMapApiProvider)
 	{
 		$locationProvider.html5Mode(true);
 
@@ -13,9 +13,15 @@
 		 .when('/users/:userId', {
 		 	template: '<my-user-detail></my-user-detail>'
 		 });
+
+		uiGmapGoogleMapApiProvider.configure({
+        key: 'AIzaSyBp6go3s6TUC8CHNEX5l_ksB24thzlNzt4',
+        libraries: 'weather,geometry,visualization'
+    });
+
 	}
 
-	angular.module('users', ['ngRoute', 'users.controllers'])
+	angular.module('users', ['ngRoute', 'users.controllers', 'uiGmapgoogle-maps'])
 		.component('myUsers', {
 			controller: 'UsersListController',
 			controllerAs: 'userslist',

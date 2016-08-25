@@ -1,13 +1,37 @@
-<article class="blog-user">
-  <header class="blog-user-header">
-    <h1>{{ userdetail.user.name }}</h1>
-  </header>
+<div class="container-blog-user">
+  <article class="blog-user">
+    <header class="blog-user-header">
+      <div class="upper-box">
+        <div class="responsive-circle-container">
+          <div class="responsive-circle img-circle"></div>
+        </div>
+        <h1>{{ userdetail.user.name }}</h1>
+        <a ng-href="http://{{ userdetail.user.website}}">{{ userdetail.user.website}}</a>
+      </div>
+      <div class="lower-box">
+      <p class="blog-post-body">
+        <i class="fa fa-phone" aria-hidden="true"></i> {{ userdetail.user.phone}}<br/><br/>
+        <i class="fa fa-university" aria-hidden="true"></i> {{ userdetail.user.company.name}}
+      </p>
+      <ui-gmap-google-map center='userdetail.userMap.pos' zoom='8'>
+        <ui-gmap-marker coords="userdetail.userMap.pos" options="userdetail.userMap.options" idkey="userdetail.userMap.id">
+          </ui-gmap-marker>
+      </ui-gmap-google-map>
+      <div class="button">
+       <a ng-href="mailto: {{ userdetail.user.email }}">MESSAGE</a>
+      </div>
+    </div>
+    </header>
+    
+  </article>
+<!--<aside class="catchphrase">
   <p class="blog-post-body">
-    {{ userdetail.user.username }}
+    {{ userdetail.user.phone}}<br/>
+    {{ userdetail.user.email}}<br/>
+    {{ userdetail.user.address}}<br/>
+    {{ userdetail.user.website}}<br/>
+    {{ userdetail.user.company}}<br/>
   </p>
-</article>
-<aside class="catchphrase">
-  <p class="blog-post-body">
-    {{ userdetail.user.phone}}
-  </p>
-</aside>
+</aside>-->
+</div>
+
