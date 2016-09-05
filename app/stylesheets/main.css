@@ -190,7 +190,8 @@ body {
   color: #7e644b;
 }
 .simple-pagination__button,
-.blog-post-header {
+.blog-post-header,
+.blog-post-create-header {
   font-family: 'Oswald';
   color: #7e644b;
 }
@@ -302,4 +303,35 @@ body {
 .angular-google-map-container {
   height: 200px;
   border: 5px solid #3e4a40;
+}
+.blog-post-create-title {
+  color: #a57f68;
+  font-family: "PoiretOne";
+  font-weight: bold;
+  margin: 0 auto;
+}
+.blog-post-create-input,
+.blog-post-create-select {
+  width: 80%;
+  font-family: "PoiretOne";
+  font-size: 1em;
+  padding: 0.5em;
+  background: #979a85;
+  border: 0;
+  color: #3e4a40;
+  margin-top: 0.5em;
+  margin-bottom: 0.7em;
+}
+.blog-post-create-fieldset {
+  border: 0;
+  padding: 0;
+}
+.blog-post-create-button {
+  width: 100%;
+  background: #3e4a40;
+  color: #a57f68;
+  font-family: "Oswald";
+  border: 0;
+  padding: 0.3em;
+  font-size: 1em;
 }

@@ -1,0 +1,7 @@
+<div ng-controller="FileChangeController">
+	<input type='file' file-change="upload(this);" ng-model="file"/>
+</div>
+<a href="" ng-click="changepreviewpost.changePreview();">
+	Update preview
+</a>
+<show-preview preview="changepreviewpost.file"></show-preview>

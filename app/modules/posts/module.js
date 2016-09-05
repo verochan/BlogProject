@@ -16,7 +16,30 @@
 	    });
 	}
 
-	angular.module('posts', ['ngRoute', 'posts.controllers'])
+    function fileChange() {
+      return {
+      restrict: 'A',
+      require: 'ngModel',
+      controller: 'FileChangeController',
+      scope: {
+        fileChange: '&'
+      },
+      link: function link(scope, element, attrs, ctrl) {
+      	function onChange() {
+      		console.log('filechange onchangE'+element[0].name);
+          ctrl.$setViewValue(element[0].files[0]);
+          scope.fileChange();
+        }
+          element.on('change', onChange);
+
+          scope.$on('destroy', function () {
+            element.off('change', onChange);
+          });
+        }
+      };
+    }
+
+	angular.module('posts', ['ngRoute', 'posts.controllers', 'users.controllers'])
 			.component('postsList', {
 			    controller: 'PostListController',
 			    controllerAs: 'postlist',
@@ -46,6 +69,26 @@
 			    controllerAs: 'postcreate',
 			    templateUrl: 'modules/posts/views/post-create.tpl.html'
 			  })
+			.component('extraDataForNewPost', {
+			    controller: 'ExtraDataController',
+			    controllerAs: 'extradata',
+			    templateUrl: 'modules/posts/views/post-create-extra-data.tpl.html'
+			  })
+			.component('changePreview', {
+				controller: 'ChangePreviewPostController',
+				controllerAs: 'changepreviewpost',
+				templateUrl: 'modules/posts/views/post-image-preview.tpl.html'
+			})
+			.component('showPreview', {
+				bindings: {
+    				preview: '<',
+  				},
+				controller: 'ShowPreviewPostController',
+				controllerAs: 'showpreviewpost',
+				templateUrl: 'modules/posts/views/post-save-image-preview.tpl.html'
+			})
+			//In order to update the post image preview I need to make it as a directive,
+			//components' bindings don't support updates on inputs of type file :(
+			.directive('fileChange', fileChange)
 			.config(config);  
-
 })();

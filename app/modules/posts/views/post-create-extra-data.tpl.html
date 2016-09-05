@@ -1,0 +1,6 @@
+<fieldset class="blog-post-create-fieldset">
+  <p class="blog-post-create-title">Who is the user?</p>
+  <select class="blog-post-create-select" name="user-list" form="createPostForm">
+    <option ng-repeat="user in extradata.infocreatepost.usersPost" value="user.id">{{ user.name }}</option>
+  </select>
+</fieldset>

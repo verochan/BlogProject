@@ -1,24 +1,33 @@
 <section>
-  <form name="createPost" role="form" ng-submit="postcreate.create()">
+  <header class="blog-post-create-header">
+    <h1>New Post</h1>
+  </header>
+  <form id="createPostForm" name="createPost" role="form" ng-submit="postcreate.create()">
 
-    <fieldset class="form-group">
-      <input class="form-control input-lg"
+    <fieldset class="blog-post-create-fieldset">
+      <p class="blog-post-create-title">Title</p>
+      <input class="blog-post-create-input"
              type="text"
-             placeholder="Título del Post"
+             placeholder="Title"
              ng-model="postcreate.post.title"
              required>
     </fieldset>
-    <fieldset class="form-group">
-      <textarea class="form-control input-lg"
-                placeholder="Texto del Post"
+    <fieldset class="blog-post-create-fieldset">
+      <p class="blog-post-create-title">Content</p>
+      <textarea class="blog-post-create-input"
+                placeholder="Content"
                 ng-model="postcreate.post.text"
                 required></textarea>
     </fieldset>
-    <hr>
 
-    <button class="btn btn-primary btn-lg"
+    <extra-data-for-new-post></extra-data-for-new-post>
+
+    <change-preview></change-preview>
+    
+
+    <button class="blog-post-create-button"
             type="submit" ng-disabled="createPost.$invalid">
-      <span class="fa fa-rocket"> Publicar</span>
+      <i class="fa fa-rocket"></i> Publish
     </button>
 
   </form>
