@@ -99,45 +99,35 @@
 			);
   	}
 
-  	function ChangePreviewPostController(PreviewFileService)
+  	function FileChangeController($scope, PreviewFileService) {
+    	$scope.upload = function () {
+      		console.log('thefile:'+$scope.file);
+      		PreviewFileService.SaveFile($scope.file);
+      		//If I want to automatically show the preview without clicking buttons,
+      		//I would add UpdatePreview here and ChangePreviewPostController & ShowPreviewPostController
+      		//wouldn't be necessary
+      		//UpdatePreviewService.UpdatePreview(PreviewFileService.ReturnFile(), '#imgpreview');
+    	};
+    }
+
+    function ChangePreviewPostController(PreviewFileService)
   	{
   		this.$onInit = function () {
     		this.file='';
     	};
     	this.changePreview=function(){
-  			console.log('changePreview'+PreviewFileService.ReturnFile());
-  			this.file=PreviewFileService.ReturnFile();
+  			console.log('changePreview');
+  			this.filename=PreviewFileService.ReturnFile().name;
   		};
   	}
 
-  	function ShowPreviewPostController(PreviewFileService)
+  	function ShowPreviewPostController(PreviewFileService, UpdatePreviewService)
   	{
   		this.$onChanges= function(){
-  			//console.log('showpreview: '+changes.file);
-  			if(PreviewFileService.ReturnFile())
-  			{
-      			var reader= new FileReader();
-
-      			reader.onload=function(e)
-      			{
-      				//As FileReader is from javascript API and not angular, 
-      				//I need to assign the image like this...
-      				var lapreview = angular.element(document.querySelector('#imgpreview'));
-      				lapreview.attr('src', e.target.result);
-      				//and not the Angular way which would be like this
-      				//this.mypreview=e.target.result;
-      			};
-      			reader.readAsDataURL(PreviewFileService.ReturnFile());
-      		}
+  			console.log('showpreview');
+  			UpdatePreviewService.UpdatePreview(PreviewFileService.ReturnFile(), '#imgpreview');
   		};
   	}
-
-  	function FileChangeController($scope, PreviewFileService) {
-    	$scope.upload = function () {
-      		console.log('thefile:'+$scope.file);
-      		PreviewFileService.SaveFile($scope.file);
-    	};
-    }
 
 	  angular
 		  .module('posts.controllers')

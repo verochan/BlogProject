@@ -20,21 +20,21 @@
       return {
       restrict: 'A',
       require: 'ngModel',
-      controller: 'FileChangeController',
       scope: {
         fileChange: '&'
+        //SUMMARY
+        //when the element changes, onChange is called,
+        //when onChange finishes its business, 
+        //the function assigned to fileChange DOM variable (file-change) gets called (upload()) 
       },
       link: function link(scope, element, attrs, ctrl) {
       	function onChange() {
-      		console.log('filechange onchangE'+element[0].name);
+      	  console.log('filechange onchangE'+element[0].name);
           ctrl.$setViewValue(element[0].files[0]);
           scope.fileChange();
         }
-          element.on('change', onChange);
-
-          scope.$on('destroy', function () {
-            element.off('change', onChange);
-          });
+          //on the change event (jQuery) of the element, onChange is called (event handler onChange is attached using .on)
+          element.on('change', onChange); 
         }
       };
     }
