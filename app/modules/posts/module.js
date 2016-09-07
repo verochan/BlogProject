@@ -87,6 +87,15 @@
 				controllerAs: 'showpreviewpost',
 				templateUrl: 'modules/posts/views/post-save-image-preview.tpl.html'
 			})
+			.component('showMainPostPreview', {
+				bindings: {
+    				titlepost: '<',
+    				bodypost: '<'
+  				},
+				controller: 'ShowMainPreviewPostController',
+				controllerAs: 'postdetail',
+				templateUrl: 'modules/posts/views/post-detail.tpl.html'
+			})
 			//In order to update the post image preview I need to make it as a directive,
 			//components' bindings don't support updates on inputs of type file :(
 			.directive('fileChange', fileChange)

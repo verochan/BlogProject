@@ -38,6 +38,8 @@
 		this.post={};
 		this.comments={};
 		this.user={};
+		this.titlepost='';
+		this.bodypost='';
 
 		var self=this;
 
@@ -46,6 +48,8 @@
 				function(data)
 				{
 					self.post=data[0];
+					self.titlepost=self.post.title;
+					self.bodypost=self.post.body;
 					self.user=User.query({ id: self.post.userId});
 				},
 				function(error)
@@ -70,6 +74,27 @@
 	function PostCreateController (Post) 
 	{
     	var self = this;
+
+    	this.$onInit = function () {
+    		this.parenttitle='caca';
+    		this.parentbody='pis';
+    	};
+
+    	this.changePreview=function(element, elementName){
+  			console.log('changePreviewWhole'+element+' '+elementName);
+  			
+  			switch(elementName)
+  			{
+  				case 'title':
+  					this.parenttitle=element;
+  					break;
+  				case 'body':
+  					this.parentbody=element;
+  					break;
+  					
+  			}
+	  		
+  		};
 
     	this.create = function() 
     	{
@@ -117,7 +142,8 @@
     	};
     	this.changePreview=function(){
   			console.log('changePreview');
-  			this.filename=PreviewFileService.ReturnFile().name;
+  			
+  			this.filename=PreviewFileService.ReturnFile().name;	
   		};
   	}
 
@@ -129,6 +155,25 @@
   		};
   	}
 
+  	function ShowMainPreviewPostController()
+  	{
+  		this.$onChanges= function(changes){
+  			console.log('showmainpreview'+changes);
+  			if(changes.titlepost)
+  			{
+  				console.log('showmainpreview b: '+changes.titlepost.currentValue);
+  				this.titlepost=changes.titlepost.currentValue;
+  			}
+  			if(changes.bodypost)
+  			{
+  				console.log('showmainpreview c: '+changes.bodypost.currentValue);
+  				this.bodypost=changes.bodypost.currentValue;
+  			}
+  			// this.title=changes.title.currentValue;
+  			// this.body=changes.body.currentValue;
+  		};
+  	}
+
 	  angular
 		  .module('posts.controllers')
 		  .controller('PostListController', PostListController)
@@ -137,5 +182,6 @@
 		  .controller('ExtraDataController', ExtraDataController)
 		  .controller('ChangePreviewPostController', ChangePreviewPostController)
 		  .controller('ShowPreviewPostController', ShowPreviewPostController)
+		  .controller('ShowMainPreviewPostController', ShowMainPreviewPostController)
 		  .controller('FileChangeController', FileChangeController);
 })();

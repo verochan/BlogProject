@@ -9,26 +9,28 @@
       <input class="blog-post-create-input"
              type="text"
              placeholder="Title"
-             ng-model="postcreate.post.title"
+             ng-model="postcreate.title"
+             ng-change="postcreate.changePreview(postcreate.title, 'title');"
              required>
     </fieldset>
     <fieldset class="blog-post-create-fieldset">
       <p class="blog-post-create-title">Content</p>
       <textarea class="blog-post-create-input"
                 placeholder="Content"
-                ng-model="postcreate.post.text"
+                ng-model="postcreate.body"
+                ng-change="postcreate.changePreview(postcreate.body, 'body');"
                 required></textarea>
     </fieldset>
 
     <extra-data-for-new-post></extra-data-for-new-post>
 
     <change-preview></change-preview>
-    
 
-    <button class="blog-post-create-button"
+  </form>
+  <show-main-post-preview titlepost="postcreate.parenttitle" bodypost="postcreate.parentbody"></show-main-post-preview>
+  <button class="blog-post-create-button"
             type="submit" ng-disabled="createPost.$invalid">
       <i class="fa fa-rocket"></i> Publish
     </button>
-
-  </form>
 </section>
+
