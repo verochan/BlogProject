@@ -76,8 +76,8 @@
     	var self = this;
 
     	this.$onInit = function () {
-    		this.parenttitle='caca';
-    		this.parentbody='pis';
+    		this.parenttitle='Preview of the purrrfect title';
+    		this.parentbody='Preview of the furrry body...';
     	};
 
     	this.changePreview=function(element, elementName){
