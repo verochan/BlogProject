@@ -37,7 +37,7 @@
 	{
 		this.post={};
 		this.comments={};
-		this.user={};
+		this.userpost={};
 		this.titlepost='';
 		this.bodypost='';
 
@@ -50,7 +50,7 @@
 					self.post=data[0];
 					self.titlepost=self.post.title;
 					self.bodypost=self.post.body;
-					self.user=User.query({ id: self.post.userId});
+					self.userpost=User.query({ id: self.post.userId});
 				},
 				function(error)
 				{
@@ -91,19 +91,29 @@
   				case 'body':
   					this.parentbody=element;
   					break;
+  				case 'userpost':
+  					this.parentuserpost=element;	
   					
   			}
 	  		
   		};
-
+  		console.log('hola');
     	this.create = function() 
     	{
+    		this.post={
+    			title:'',
+    			body:''
+    		};
+    		this.post.title=this.title;
+    		this.post.body=this.body;
+    		console.log('create');
       		Post.save(self.post);
     	};
   	}
 
   	function ExtraDataController (User)
   	{
+  		console.log('parent: '+this.parent);
 		this.infocreatepost={
 
   			usersPost: {}
@@ -155,7 +165,7 @@
   		};
   	}
 
-  	function ShowMainPreviewPostController()
+  	function ShowMainPreviewPostController(User)
   	{
   		this.$onChanges= function(changes){
   			console.log('showmainpreview'+changes);
@@ -168,6 +178,12 @@
   			{
   				console.log('showmainpreview c: '+changes.bodypost.currentValue);
   				this.bodypost=changes.bodypost.currentValue;
+  			}
+  			if(changes.userpost)
+  			{
+  				console.log('showmainpreview c: '+changes.userpost.currentValue);
+  				this.userpost={};
+		  		this.userpost=User.query({ id: changes.userpost.currentValue});
   			}
   			// this.title=changes.title.currentValue;
   			// this.body=changes.body.currentValue;

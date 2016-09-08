@@ -1,4 +1,4 @@
-<section>
+<section ng-transclude>
   <header class="blog-post-create-header">
     <h1>New Post</h1>
   </header>
@@ -23,14 +23,15 @@
     </fieldset>
 
     <extra-data-for-new-post></extra-data-for-new-post>
-
+    
     <change-preview></change-preview>
 
-  </form>
-  <show-main-post-preview titlepost="postcreate.parenttitle" bodypost="postcreate.parentbody"></show-main-post-preview>
+  
+  <show-main-post-preview titlepost="postcreate.parenttitle" bodypost="postcreate.parentbody" userpost="postcreate.parentuserpost"></show-main-post-preview>
   <button class="blog-post-create-button"
             type="submit" ng-disabled="createPost.$invalid">
       <i class="fa fa-rocket"></i> Publish
     </button>
+    </form>
 </section>
 

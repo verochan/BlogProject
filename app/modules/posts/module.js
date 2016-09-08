@@ -67,12 +67,16 @@
 			.component('newPost', {
 			    controller: 'PostCreateController',
 			    controllerAs: 'postcreate',
-			    templateUrl: 'modules/posts/views/post-create.tpl.html'
+			    templateUrl: 'modules/posts/views/post-create.tpl.html',
+			    transclude: true
 			  })
 			.component('extraDataForNewPost', {
 			    controller: 'ExtraDataController',
 			    controllerAs: 'extradata',
-			    templateUrl: 'modules/posts/views/post-create-extra-data.tpl.html'
+			    templateUrl: 'modules/posts/views/post-create-extra-data.tpl.html',
+			    require: {
+			    	parent: '^newPost'
+			    }
 			  })
 			.component('changePreview', {
 				controller: 'ChangePreviewPostController',
@@ -90,7 +94,8 @@
 			.component('showMainPostPreview', {
 				bindings: {
     				titlepost: '<',
-    				bodypost: '<'
+    				bodypost: '<',
+    				userpost: '<'
   				},
 				controller: 'ShowMainPreviewPostController',
 				controllerAs: 'postdetail',
