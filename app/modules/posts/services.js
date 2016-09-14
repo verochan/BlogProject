@@ -15,11 +15,9 @@
 
 		var SaveFile= function(selectedFile) {
 			theFile=selectedFile;
-			console.log('service: '+theFile);
 		};
 
 		var ReturnFile= function(){
-			console.log('service out'+theFile);
 			return theFile;
 		};
 

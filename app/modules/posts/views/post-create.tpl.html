@@ -5,7 +5,7 @@
   <form id="createPostForm" name="createPost" role="form" ng-submit="postcreate.create()">
 
     <fieldset class="blog-post-create-fieldset">
-      <p class="blog-post-create-title">Title</p>
+      <p class="blog-post-create-title">Title (*)</p>
       <input class="blog-post-create-input"
              type="text"
              placeholder="Title"
@@ -14,7 +14,7 @@
              required>
     </fieldset>
     <fieldset class="blog-post-create-fieldset">
-      <p class="blog-post-create-title">Content</p>
+      <p class="blog-post-create-title">Content (*) </p>
       <textarea class="blog-post-create-input"
                 placeholder="Content"
                 ng-model="postcreate.body"

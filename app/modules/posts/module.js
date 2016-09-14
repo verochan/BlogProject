@@ -29,7 +29,7 @@
       },
       link: function link(scope, element, attrs, ctrl) {
       	function onChange() {
-      	  console.log('filechange onchangE'+element[0].name);
+      	  //console.log('filechange onchangE'+element[0].name);
           ctrl.$setViewValue(element[0].files[0]);
           scope.fileChange();
         }

@@ -78,11 +78,11 @@
     	this.$onInit = function () {
     		this.parenttitle='Preview of the purrrfect title';
     		this.parentbody='Preview of the furrry body...';
+    		this.parentuserpost='';
     	};
 
     	this.changePreview=function(element, elementName){
-  			console.log('changePreviewWhole'+element+' '+elementName);
-  			
+  			//console.log('changePreviewWhole'+element+' '+elementName);
   			switch(elementName)
   			{
   				case 'title':
@@ -97,23 +97,22 @@
   			}
 	  		
   		};
-  		console.log('hola');
+  		
     	this.create = function() 
     	{
     		this.post={
     			title:'',
     			body:''
     		};
+    		//console.log(this.userpost);
     		this.post.title=this.title;
     		this.post.body=this.body;
-    		console.log('create');
       		Post.save(self.post);
     	};
   	}
 
   	function ExtraDataController (User)
   	{
-  		console.log('parent: '+this.parent);
 		this.infocreatepost={
 
   			usersPost: {}
@@ -136,7 +135,7 @@
 
   	function FileChangeController($scope, PreviewFileService) {
     	$scope.upload = function () {
-      		console.log('thefile:'+$scope.file);
+      		//console.log('thefile:'+$scope.file);
       		PreviewFileService.SaveFile($scope.file);
       		//If I want to automatically show the preview without clicking buttons,
       		//I would add UpdatePreview here and ChangePreviewPostController & ShowPreviewPostController
@@ -151,8 +150,6 @@
     		this.file='';
     	};
     	this.changePreview=function(){
-  			console.log('changePreview');
-  			
   			this.filename=PreviewFileService.ReturnFile().name;	
   		};
   	}
@@ -160,7 +157,6 @@
   	function ShowPreviewPostController(PreviewFileService, UpdatePreviewService)
   	{
   		this.$onChanges= function(){
-  			console.log('showpreview');
   			UpdatePreviewService.UpdatePreview(PreviewFileService.ReturnFile(), '#imgpreview');
   		};
   	}
@@ -168,25 +164,22 @@
   	function ShowMainPreviewPostController(User)
   	{
   		this.$onChanges= function(changes){
-  			console.log('showmainpreview'+changes);
   			if(changes.titlepost)
   			{
-  				console.log('showmainpreview b: '+changes.titlepost.currentValue);
+  				//console.log('showmainpreview b: '+changes.titlepost.currentValue);
   				this.titlepost=changes.titlepost.currentValue;
   			}
   			if(changes.bodypost)
   			{
-  				console.log('showmainpreview c: '+changes.bodypost.currentValue);
+  				//console.log('showmainpreview c: '+changes.bodypost.currentValue);
   				this.bodypost=changes.bodypost.currentValue;
   			}
   			if(changes.userpost)
   			{
-  				console.log('showmainpreview c: '+changes.userpost.currentValue);
+  				//console.log('showmainpreview c: '+changes.userpost.currentValue);
   				this.userpost={};
 		  		this.userpost=User.query({ id: changes.userpost.currentValue});
   			}
-  			// this.title=changes.title.currentValue;
-  			// this.body=changes.body.currentValue;
   		};
   	}
 
