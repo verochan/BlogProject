@@ -1,15 +1,14 @@
-(function()
+(function ()
 {
-	'use strict';
-	
-	angular.module('users.services', ['ngResource']);
+  'use strict';
 
-	function User($resource, BaseUrl)
-	{
-		return $resource(BaseUrl+'/users/:userId', {userId: '@_id'});
-	}
+  angular.module('users.services', ['ngResource']);
 
-	angular.module('users.services')
-			.constant('BaseUrl', 'http://jsonplaceholder.typicode.com')
-			.factory('User', User);
+  function User($resource, BaseUrl) {
+    return $resource(BaseUrl + '/users/:userId', { userId: '@_id' });
+  }
+
+  angular.module('users.services')
+      .constant('BaseUrl', 'http://jsonplaceholder.typicode.com')
+      .factory('User', User);
 })();
