@@ -1,0 +1,7 @@
+<fieldset class="blog-post-create-fieldset">
+  <p class="blog-post-create-title">Who is the user?</p>
+  <select class="blog-post-create-select" ng-model="extradata.parent.userpost" name="user-list" form="createPostForm" ng-change="extradata.parent.changePreview(extradata.parent.userpost, 'userpost');">
+  	<option selected disabled value="">Select the user who meows...</option>
+    <option ng-repeat="user in extradata.infocreatepost.usersPost" value="{{ user.id }}">{{ user.name }}</option>
+  </select>
+</fieldset>

@@ -1,5 +1,6 @@
-'use strict';
+(function ()
+{
+  'use strict';
 
-(function() {
-  console.log('hola mundooooo!');
+  angular.module('blog', ['posts', 'users']);
 })();
