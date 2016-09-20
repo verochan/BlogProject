@@ -15,7 +15,8 @@ var gulp = require('gulp'),
   gulpif = require('gulp-if'),
   minifyCss = require('gulp-minify-css'),
   useref = require('gulp-useref'),
-  uglify = require('gulp-uglify');
+  uglify = require('gulp-uglify'),
+  uncss = require('gulp-uncss');
 
 
 // Busca en las carpetas de estilos y javascript los archivos que hayamos creado
@@ -133,7 +134,25 @@ gulp.task('copy', function() {
     .pipe(gulp.dest('./dist/fonts'));
 });
 
-gulp.task('build', ['templates', 'copy', 'compress']);
+gulp.task('uncss', function() {
+  gulp.src('./dist/css/style.min.css')
+    .pipe(uncss({
+      html: ['./app/index.html', 
+            './app/modules/posts/views/post-create-extra-data.tpl.html',
+            './app/modules/posts/views/post-create.tpl.html',
+            './app/modules/posts/views/post-detail-comments.tpl.html',
+            './app/modules/posts/views/post-detail-user.tpl.html',
+            './app/modules/posts/views/post-detail.tpl.html',
+            './app/modules/posts/views/post-image-preview.tpl.html',
+            './app/modules/posts/views/post-list.tpl.html',
+            './app/modules/posts/views/post-save-image-preview.tpl.html',
+            './app/modules/users/views/user-detail.tpl.html',
+            './app/modules/posts/views/users-list.tpl.html']
+    }))
+    .pipe(gulp.dest('./dist/css'));
+});
+
+gulp.task('build', ['templates', 'copy', 'compress', 'uncss']);
 
 // Vigila cambios que se produzcan en el código
 // y lanza las tareas relacionadas
