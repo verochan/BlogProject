@@ -19,7 +19,10 @@ module.exports = function(config) {
         'app/lib/angular-resource/angular-resource.js',
         'app/lib/angular-mocks/angular-mocks.js',
         'app/modules/comments/services.js',
-        'app/modules/comments/specs.js'
+        'app/modules/comments/specs.js',
+        'app/modules/users/services.js',
+        'app/modules/users/controller.js',
+        'app/modules/users/specs.js'
     ],
 
 
