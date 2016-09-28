@@ -16,14 +16,15 @@ var gulp = require('gulp'),
   minifyCss = require('gulp-minify-css'),
   useref = require('gulp-useref'),
   uglify = require('gulp-uglify'),
-  uncss = require('gulp-uncss');
+  uncss = require('gulp-uncss'),
+  karmaServer = require('karma').Server;
 
 
 // Busca en las carpetas de estilos y javascript los archivos que hayamos creado
 // para inyectarlos en el index.html
 gulp.task('inject', function() {
   const sources = gulp.src(['./app/scripts/**/*.js', './app/stylesheets/**/*.css',
-                            './app/modules/**/*.js'], { read: false });
+                            './app/modules/**/services.js'], { read: false });
   return gulp.src('index.html', { cwd: './app' })
     .pipe(inject(sources, {
       // read: false,
@@ -152,6 +153,25 @@ gulp.task('uncss', function() {
     .pipe(gulp.dest('./dist/css'));
 });
 
+/**
+ * Run test once and exit
+ */
+gulp.task('test', function (done) {
+  new karmaServer({
+    configFile: __dirname + '/karma.conf.js',
+    singleRun: true
+  }, done).start();
+});
+
+/**
+ * Watch for file changes and re-run tests on each change
+ */
+gulp.task('tdd', function (done) {
+  new karmaServer({
+    configFile: __dirname + '/karma.conf.js'
+  }, done).start();
+});
+
 gulp.task('build', ['templates', 'copy', 'compress', 'uncss']);
 
 // Vigila cambios que se produzcan en el código
@@ -163,4 +183,4 @@ gulp.task('watch', function() {
   gulp.watch(['./bower.json'], ['wiredep']);
 });
 
-gulp.task('default', ['server', 'inject', 'wiredep', 'watch']);
+gulp.task('default', ['server', 'inject', 'wiredep', 'watch', 'tdd']);
