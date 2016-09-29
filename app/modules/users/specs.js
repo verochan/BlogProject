@@ -12,6 +12,7 @@
       'username': 'Bret'
     };
 
+    //Before each test I load the module to test
     beforeEach(angular.mock.module('users.services'));
 
     beforeEach(inject(function(_User_, _$http_, _$httpBackend_) {
@@ -20,6 +21,7 @@
       $httpBackend=_$httpBackend_;
     }));
 
+    //TEST 1: User service should exist
     it('should exist', function()
     {
       expect(User).toBeDefined();
@@ -31,7 +33,7 @@
 
       beforeEach(function()
       {
-        // Initialize the local variables before each test
+        // Initialize the local variables before each test and creating mock handler
         result = {};
         errorStatus='';
         handler = {
@@ -44,15 +46,24 @@
             console.log('ERROR: '+JSON.stringify(data,null,3));
           }
         };
+        //Spy the service call and allow it to continue with its implementation
         spyOn(handler, 'success').and.callThrough();
         spyOn(handler, 'error').and.callThrough();
       });
 
+      //TEST 2: User.query should exist
       it('should exist', function()
       {
         expect(User.query).toBeDefined();
       });
 
+      //Verifying there is nothing pending at the end of tests
+      afterEach(function() {
+        $httpBackend.verifyNoOutstandingExpectation();
+        $httpBackend.verifyNoOutstandingRequest();
+      });
+
+      //TEST 3: api call is correct and should return the desired data
       it('should return and user when called with a valid id', function()
       {
         $httpBackend.whenGET(API+search).respond(200, RESPONSE_SUCCESS);
@@ -65,7 +76,8 @@
         expect(errorStatus).toEqual('');
       });
 
-      it('should return the status on error', function() {
+      //TEST 4: api call is wrong and should return 404 error
+      it('should return the status 404 on error', function() {
 
         $httpBackend.whenGET(API+search).respond(404, {status: 404});
         $http.get(API+search).then(handler.success, handler.error);
@@ -92,9 +104,11 @@
       'username': 'Bret'
     };
 
+    //Before each test I load the module to test
     beforeEach(angular.mock.module('users.controllers'));
     beforeEach(angular.mock.module('users.services'));
 
+    // Initialize the local variables before each test and creating a User mock
     beforeEach(inject(function(_$q_)
     {
       $q=_$q_;
@@ -129,17 +143,20 @@
 
     describe('Calls to services', function() {
 
+      //Resolves the promise with the mock data
       beforeEach(function() 
       {
         deferred.resolve(RESPONSE_SUCCESS);
       });
 
+      //TEST 1: User.query should be called
       it('should call User.query()', function() {
         expect(UserMock.query).toHaveBeenCalled();
       });
     });
 
     describe('Access from the view', function() {
+      //Properties should be defined for the view to read them
       it('should have this.users defined to the view', function() {
         expect(UsersListController.users).toBeDefined();
       });
