@@ -23,8 +23,8 @@ var gulp = require('gulp'),
 // Busca en las carpetas de estilos y javascript los archivos que hayamos creado
 // para inyectarlos en el index.html
 gulp.task('inject', function() {
-  const sources = gulp.src(['./app/scripts/**/*.js', './app/stylesheets/**/*.css',
-                            './app/modules/**/services.js'], { read: false });
+  const sources = gulp.src(['!./app/modules/**/test/*','./app/scripts/app.js', './app/stylesheets/**/*.css',
+                            './app/modules/**/*.js'], { read: false});
   return gulp.src('index.html', { cwd: './app' })
     .pipe(inject(sources, {
       // read: false,
@@ -178,7 +178,9 @@ gulp.task('build', ['templates', 'copy', 'compress', 'uncss']);
 // y lanza las tareas relacionadas
 gulp.task('watch', function() {
   gulp.watch(['./app/scripts/**/*.js', './app/modules/**/*.js', './Gulpfile.js'], ['jshint', 'inject']);
-  gulp.watch(['./app/**/*.html'], ['html']);
+  //When adding templates to the project, add also templates to the watch task
+  //so the html changes are updated on the templates and visible on the browser
+  gulp.watch(['./app/**/*.html'], ['html', 'templates']);
   gulp.watch(['./app/stylesheets/**/*.styl'], ['css', 'inject']);
   gulp.watch(['./bower.json'], ['wiredep']);
 });
