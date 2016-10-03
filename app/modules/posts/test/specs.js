@@ -178,6 +178,7 @@
       //TEST 1: Post.query should be called
       it('should call Post.query()', function() {
         expect(PostMock.query).toHaveBeenCalled();
+        expect(deferred.promise.$$state.value).toBe(RESPONSE_SUCCESS);
       });
     });
 
