@@ -68,7 +68,7 @@ gulp.task('server-dist', function() {
 
 // Busca errores en el JS y nos los muestra por pantalla
 gulp.task('jshint', function() {
-  return gulp.src(['./app/scripts/**/*.js', './app/modules/**/*.js'])
+  return gulp.src(['./app/scripts/**/*.js', '!./app/modules/**/test/*', './app/modules/**/*.js'])
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(jshint.reporter('fail'));
@@ -185,4 +185,4 @@ gulp.task('watch', function() {
   gulp.watch(['./bower.json'], ['wiredep']);
 });
 
-gulp.task('default', ['server', 'inject', 'wiredep', 'watch', 'tdd']);
+gulp.task('default', ['server', 'inject', 'wiredep', 'watch']);

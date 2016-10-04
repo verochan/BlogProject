@@ -36,6 +36,10 @@
     this.titlepost = '';
     this.bodypost = '';
 
+    this.click=function() {
+      window.alert('Meow!! 😽');
+    };
+
     const self = this;
 
     Post.query({ id: $routeParams.postId })
