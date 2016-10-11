@@ -131,6 +131,8 @@ gulp.task('copy', function() {
   // gulp.src('./app/index.html')
     // .pipe(useref())
     // .pipe(gulp.dest('./dist'));
+  gulp.src('./app/about-me.html')
+    .pipe(gulp.dest('./dist'));
   gulp.src('./app/lib/font-awesome/fonts/**')
     .pipe(gulp.dest('./dist/fonts'));
 });
@@ -139,6 +141,7 @@ gulp.task('uncss', function() {
   gulp.src('./dist/css/style.min.css')
     .pipe(uncss({
       html: ['./app/index.html', 
+            './app/about-me.html',
             './app/modules/posts/views/post-create-extra-data.tpl.html',
             './app/modules/posts/views/post-create.tpl.html',
             './app/modules/posts/views/post-detail-comments.tpl.html',
