@@ -2,7 +2,7 @@
 {
   describe('Comments service', function() 
   {
-    var Comment, $q, $httpBackend;
+    var Comment, $httpBackend;
 
     var API = 'http://jsonplaceholder.typicode.com/comments?';
     var search = 'postId=1';
@@ -57,6 +57,12 @@
       //TEST 2: Does Comment.query exist?
       it('should exist', function() {
         expect(Comment.query).toBeDefined();
+      });
+
+      //Verifying there is nothing pending at the end of tests
+      afterEach(function() {
+        $httpBackend.verifyNoOutstandingExpectation();
+        $httpBackend.verifyNoOutstandingRequest();
       });
 
       //TEST 3: API call is correct and should return the desired data

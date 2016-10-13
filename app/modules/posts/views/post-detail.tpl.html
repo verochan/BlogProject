@@ -3,7 +3,7 @@
     <h1>{{ postdetail.titlepost }}</h1>
   </header>
   <p class="blog-post-body">
-    <img id="imgpreview" src="http://placekitten.com/995/300" />
+    <img id="imgpreview" ng-click="postdetail.click()" src="http://placekitten.com/995/300" />
     {{ postdetail.bodypost }}
   </p>
   <post-detail-user data="postdetail.userpost[0]">

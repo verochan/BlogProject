@@ -18,11 +18,15 @@ module.exports = function(config) {
         'app/lib/angular/angular.js',
         'app/lib/angular-resource/angular-resource.js',
         'app/lib/angular-mocks/angular-mocks.js',
+        'app/lib/angular-simple-pagination/dist/angular-simple-pagination.js',
         'app/modules/comments/services.js',
-        'app/modules/comments/specs.js',
+        'app/modules/comments/test/specs.js',
         'app/modules/users/services.js',
         'app/modules/users/controller.js',
-        'app/modules/users/specs.js'
+        'app/modules/users/test/specs.js',
+        'app/modules/posts/services.js',
+        'app/modules/posts/controllers.js',
+        'app/modules/posts/test/specs.js'
     ],
 
 

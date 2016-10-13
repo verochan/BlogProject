@@ -72,6 +72,7 @@ body
 
 .aside-right
     background #8B8F76
+    padding-top 1.5em
 
 .footer
     background #A57F68
@@ -81,7 +82,7 @@ body
     
 @media all and (min-width : 480px) 
     .aside-right  
-        flex 1 auto 
+        flex 1 
     .main
         order 2
         flex 3 0px
@@ -177,7 +178,7 @@ body
     font-family 'Oswald'
     color #7E644B   
 
-.blog-post-body, .blog-post-user, .blog-post-comments   
+.blog-post-body, .blog-post-user, .blog-post-comments, .about-me-description   
     font-family 'PoiretOne' 
     color #3E4A40
     margin 0 auto
@@ -327,3 +328,38 @@ body
     border 0
     padding 0.3em
     font-size 1em    
+
+//ABOUT ME
+
+.about-me-title
+    font-family "Oswald"
+    text-align left
+    color #3e4a40
+    padding 0em 1em 0em 1em
+
+.about-me-name
+    display block
+    text-align center    
+    font-family "Oswald"
+    color #7e644b
+
+.about-me-description p
+    padding 0em 1em 0em 1em
+    font-family "Oswald"  
+
+.about-me-connections
+    display flex   
+    flex-direction row
+    flex-wrap wrap
+    justify-content center
+
+.aside-right i
+    color #3e4a40
+    font-size 2.5em   
+    margin-right 0.5em  
+
+.aside-right i:hover
+    color #7e644b     
+
+.about-me-image
+    background url('https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAgaAAAAJDE0OTc0ZGRhLTg4MWYtNDI3NC05ZmVhLWY0MjZmNmM5MDM0ZA.jpg') repeat scroll 0 0 / cover  

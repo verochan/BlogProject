@@ -39,8 +39,7 @@
           </nav>
         </header>
         <section class="main" ng-view></section>
-        <aside class="aside-right">
-          aside
+        <aside class="aside-right" ng-include="'about-me.html'">
         </aside>
         <footer class="footer">The Kitty Blog Project by Verónica Valls</footer>
     </div>
@@ -77,14 +76,13 @@
     <!-- endinject -->
     <!-- inject:js -->
     <script src="/scripts/app.js"></script>
-    <script src="/scripts/templates.js"></script>
     <script src="/modules/comments/services.js"></script>
-    <script src="/modules/users/controller.js"></script>
-    <script src="/modules/users/module.js"></script>
-    <script src="/modules/users/services.js"></script>
     <script src="/modules/posts/controllers.js"></script>
     <script src="/modules/posts/module.js"></script>
     <script src="/modules/posts/services.js"></script>
+    <script src="/modules/users/controller.js"></script>
+    <script src="/modules/users/module.js"></script>
+    <script src="/modules/users/services.js"></script>
     <!-- endinject -->
     <!-- endbuild -->
   </body>
