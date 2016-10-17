@@ -1,5 +1,5 @@
 ###The Kitty Blog Project
-This blog project is based on the project developed on Carlos Azaustre's book "Desarrollo web ágil con AngularJS" but using a more complete project structure, components and any AngularJS 1.5.7 newer and advisable features which will be featured in a similar way in AngularJS 2.
+This blog project is based on the project developed on Carlos Azaustre's book "Desarrollo web ágil con AngularJS" but using a more complete project structure, components and any AngularJS 1.5.7 newer and advisable features which will be featured in a similar way in AngularJS 2. The project is live on http://komikiro.com/kittyblogproject/
 
 ###Installation
 
