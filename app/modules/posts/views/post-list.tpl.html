@@ -1,11 +1,11 @@
 <ul class="flex-container blog-post-list">
  	<li class="flex-item-postlist blog-post-item" ng-repeat="post in (postlist.posts | limitTo:postlist.settings.pageLimit:postlist.settings.offset)">
-		<a ng-href="/post/{{ post.id }}" class="blog-post-img">
+		<a ng-href="post/{{ post.id }}" class="blog-post-img">
 			<img src='https://placekitten.com/430/300' />
 		</a>
 		<div class="blog-post-link">
 			<i class="fa fa-file-text-o icon" aria-hidden="true"></i>
-			<a ng-href="/post/{{ post.id }}">{{ post.title }}</a>
+			<a ng-href="post/{{ post.id }}">{{ post.title }}</a>
 		</div>
  	</li>
 </ul>

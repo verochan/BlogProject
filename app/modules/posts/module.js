@@ -8,6 +8,9 @@
         .when('/', {
           template: ['<posts-list></posts-list'],
         })
+        .when('', {
+          template: ['<posts-list></posts-list'],
+        })
         .when('/post/:postId', {
           template: '<post-detail></post-detail>',
         })
