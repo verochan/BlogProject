@@ -10,12 +10,6 @@ This blog project is based on the project developed on Carlos Azaustre's book "D
 $ npm install
 ```
 
-* Execute Gulp start to initialise the environment
-
-```
-$ gulp start
-```
-
 * Execute Bower install to initialise the Bower dependencies
 
 ```
