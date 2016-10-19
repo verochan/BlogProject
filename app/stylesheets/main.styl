@@ -29,12 +29,16 @@ body
 
 .wrapper
     display flex
+    display -webkit-flex
     flex-direction row
+    -webkit-flex-direction row
     flex-wrap wrap
+    -webkit-flex-wrap wrap
 
 .wrapper > * 
     padding: 10px
     flex: 1 100%
+    -webkit-flex: 1 100%
 
 .header
     background #3E4A40
@@ -43,20 +47,29 @@ body
     font-size 3em
     padding 0 0.3em 0.2em 0.3em
     display flex
+    display -webkit-flex
     flex-direction row
+    -webkit-flex-direction row
     flex-wrap wrap
+    -webkit-flex-wrap wrap
     justify-content space-between   
+    -webkit-justify-content space-between 
 
 .main
     flex-flow row wrap
+    -webkit-flex-flow row wrap
     justify-content space-around
-    
+    -webkit-justify-content space-around
 
 .navigation
     display flex
+    display -webkit-flex
     flex-direction row
+    -webkit-flex-direction row
     flex-wrap no-wrap
+    -webkit-flex-wrap no-wrap
     justify-content flex-end
+    -webkit-justify-content flex-end
     margin 0.2em 0 0 0
     padding 0
 
@@ -83,17 +96,24 @@ body
 @media all and (min-width : 480px) 
     .aside-right  
         flex 1 
+        -webkit-flex 1 
     .main
         order 2
         flex 3 0px
+        -webkit-flex 3 0px
+        -webkit-order 2
     .header
         order 1    
+        -webkit-order 1
     .aside-right  
         order 3 
+        -webkit-order 3
     .footer   
         order 4 
+        -webkit-order 4 
     .navigation
         justify-content space-around
+        -webkit-justify-content space-around
 
 @media all and (min-width: 1024px)
     .angular-google-map-container 
@@ -106,6 +126,7 @@ body
 @media all and (max-width : 768px) 
     .header
         justify-content space-around
+        -webkit-justify-content space-around
     .angular-google-map-container 
         width 480px
 
@@ -114,6 +135,7 @@ body
         text-align center   
     .navigation
         flex-flow column wrap
+        -webkit-flex-flow column wrap
         padding 0
     .angular-google-map-container 
         width 260px    
@@ -122,11 +144,17 @@ body
 
 .flex-container
     display flex
+    display -webkit-flex
     flex-direction row
     flex-wrap wrap
+    -webkit-flex-direction row
+    -webkit-flex-wrap wrap
     justify-content space-around
     align-items center
     align-content flex-start
+    -webkit-justify-content space-around
+    -webkit-align-items center
+    -webkit-align-content flex-start
 
 .flex-item-postlist
     margin: auto
@@ -148,11 +176,17 @@ body
 .simple-pagination
     font-family 'Oswald'
     display flex
+    display -webkit-flex
     flex-direction row
     flex-wrap wrap  
+    -webkit-flex-direction row
+    -webkit-flex-wrap wrap
     justify-content space-between
     align-items baseline
     align-content center
+    -webkit-justify-content space-between
+    -webkit-align-items baseline
+    -webkit-align-content center
 
 .simple-pagination p
     margin 0 0.5em 0 0   
@@ -179,7 +213,7 @@ body
     color #7E644B   
 
 .blog-post-body, .blog-post-user, .blog-post-comments, .about-me-description   
-    font-family 'PoiretOne' 
+    font-family 'Poiret One' 
     color #3E4A40
     margin 0 auto
     margin-bottom 0.7em
@@ -189,7 +223,7 @@ body
 
 .subtitle
     background #8B8F76
-    font-family 'PoiretOne' 
+    font-family 'Poiret One' 
     color #3E4A40
     padding 0.2em
     width 99%
@@ -232,9 +266,13 @@ body
 
 .container-blog-user
     display flex
+    display -webkit-flex
     flex-direction row
     flex-wrap wrap
+    -webkit-flex-direction row
+    -webkit-flex-wrap wrap  
     justify-content space-around     
+    -webkit-justify-content space-around
 
 .blog-user 
     width 100%
@@ -246,7 +284,7 @@ body
     margin 0 auto
 
 .container-blog-user a
-    font-family "PoiretOne"
+    font-family "Poiret One"
     color #a57f68
     display block
     text-align center
@@ -257,13 +295,19 @@ body
     display flex
     flex-flow column wrap
     justify-content center
+    display -webkit-flex
+    -webkit-flex-flow column wrap
+    -webkit-justify-content center
 
 .lower-box
     background #a57f68
     padding 0.7em  
     display flex
+    display -webkit-flex
     flex-flow column wrap
+    -webkit-flex-flow column wrap
     justify-content center
+    -webkit-justify-content center
 
 .container-blog-user i
     font-size 2em
@@ -281,8 +325,10 @@ body
 
 .angular-google-map
     display flex
-    flex-flow row wrap
-    justify-content center            
+    display -webkit-flex
+    -webkit-flex-flow row wrap
+    justify-content center     
+    -webkit-justify-content center        
 
 .angular-google-map-container 
     height: 200px 
@@ -292,13 +338,13 @@ body
 
 .blog-post-create-title
     color #A57F68
-    font-family "PoiretOne"
+    font-family "Poiret One"
     font-weight bold
     margin 0 auto
 
 .blog-post-create-input, .blog-post-create-select
     width 80%   
-    font-family "PoiretOne"
+    font-family "Poiret One"
     font-size 1em
     padding 0.5em
     background #979a85
@@ -349,9 +395,13 @@ body
 
 .about-me-connections
     display flex   
+    display -webkit-flex
     flex-direction row
     flex-wrap wrap
+    -webkit-flex-direction row
+    -webkit-flex-wrap wrap
     justify-content center
+    -webkit-justify-content center
 
 .aside-right i
     color #3e4a40

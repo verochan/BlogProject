@@ -6,7 +6,7 @@
 
   function UsersListController(User) {
     this.users = {};
-    const self = this;
+    var self = this;
 
     User.query()
       .$promise.then(
@@ -34,7 +34,7 @@
       },
       id: 0,
     };
-    const self = this;
+    var self = this;
 
     User.query({ id: $routeParams.userId })
     .$promise.then(

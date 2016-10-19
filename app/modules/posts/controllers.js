@@ -15,7 +15,7 @@
       pageLimit: 5,
       pageLimits: ['10', '50', '100'],
     };
-    const self = this;
+    var self = this;
 
     Post.query()
       .$promise.then(
@@ -40,7 +40,7 @@
       window.alert('Meow!! 😽');
     };
 
-    const self = this;
+    var self = this;
 
     Post.query({ id: $routeParams.postId })
       .$promise.then(
@@ -67,7 +67,7 @@
   }
 
   function PostCreateController(Post) {
-    const self = this;
+    var self = this;
 
     this.$onInit = function () {
       this.parenttitle = 'Preview of the purrrfect title';
@@ -110,7 +110,7 @@
       usersPost: {},
     };
 
-    const self = this;
+    var self = this;
 
     User.query()
       .$promise.then(

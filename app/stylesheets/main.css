@@ -1,20 +1,20 @@
 @font-face {
-  font-family: 'PoiretOne';
+  font-family: 'Lobster';
   font-style: normal;
   font-weight: 400;
-  src: local('Poiret One'), local('PoiretOne-Regular'), url("https://fonts.gstatic.com/s/poiretone/v4/HrI4ZJpJ3Fh0wa5ofYMK8QzyDMXhdD8sAj6OAJTFsBI.woff2") format('woff2');
+  src: local('Lobster'), local('Lobster-Regular'), url("http://fonts.gstatic.com/s/lobster/v18/NIaFDq6p6eLpSvtV2DTNDQLUuEpTyoUstqEm5AMlJo4.woff") format('woff');
 }
 @font-face {
   font-family: 'Oswald';
   font-style: normal;
   font-weight: 400;
-  src: local('Oswald Regular'), local('Oswald-Regular'), url("https://fonts.gstatic.com/s/oswald/v11/_P8jt3Y65hJ9c4AzRE0V1OvvDin1pK8aKteLpeZ5c0A.woff2") format('woff2');
+  src: local('Oswald Regular'), local('Oswald-Regular'), url("http://fonts.gstatic.com/s/oswald/v11/qpy-UiLNKP-VfOdbcs6r6-vvDin1pK8aKteLpeZ5c0A.woff") format('woff');
 }
 @font-face {
-  font-family: 'Lobster';
+  font-family: 'Poiret One';
   font-style: normal;
   font-weight: 400;
-  src: local('Lobster'), local('Lobster-Regular'), url("https://fonts.gstatic.com/s/lobster/v18/G6-OYdAAwU5fSlE7MlBvhQLUuEpTyoUstqEm5AMlJo4.woff2") format('woff2');
+  src: local('Poiret One'), local('PoiretOne-Regular'), url("http://fonts.gstatic.com/s/poiretone/v4/HrI4ZJpJ3Fh0wa5ofYMK8b3hpw3pgy2gAi-Ip7WPMi0.woff") format('woff');
 }
 a {
   color: #7e644b;
@@ -40,12 +40,16 @@ body {
 }
 .wrapper {
   display: flex;
+  display: -webkit-flex;
   flex-direction: row;
+  -webkit-flex-direction: row;
   flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
 }
 .wrapper > * {
   padding: 10px;
   flex: 1 100%;
+  -webkit-flex: 1 100%;
 }
 .header {
   background: #3e4a40;
@@ -54,19 +58,29 @@ body {
   font-size: 3em;
   padding: 0 0.3em 0.2em 0.3em;
   display: flex;
+  display: -webkit-flex;
   flex-direction: row;
+  -webkit-flex-direction: row;
   flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
   justify-content: space-between;
+  -webkit-justify-content: space-between;
 }
 .main {
   flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
   justify-content: space-around;
+  -webkit-justify-content: space-around;
 }
 .navigation {
   display: flex;
+  display: -webkit-flex;
   flex-direction: row;
+  -webkit-flex-direction: row;
   flex-wrap: no-wrap;
+  -webkit-flex-wrap: no-wrap;
   justify-content: flex-end;
+  -webkit-justify-content: flex-end;
   margin: 0.2em 0 0 0;
   padding: 0;
 }
@@ -93,22 +107,29 @@ body {
 @media all and (min-width: 480px) {
   .aside-right {
     flex: 1;
+    -webkit-flex: 1;
   }
   .main {
     order: 2;
     flex: 3 0px;
+    -webkit-flex: 3 0px;
+    -webkit-order: 2;
   }
   .header {
     order: 1;
+    -webkit-order: 1;
   }
   .aside-right {
     order: 3;
+    -webkit-order: 3;
   }
   .footer {
     order: 4;
+    -webkit-order: 4;
   }
   .navigation {
     justify-content: space-around;
+    -webkit-justify-content: space-around;
   }
 }
 @media all and (min-width: 1024px) {
@@ -124,6 +145,7 @@ body {
 @media all and (max-width: 768px) {
   .header {
     justify-content: space-around;
+    -webkit-justify-content: space-around;
   }
   .angular-google-map-container {
     width: 480px;
@@ -135,6 +157,7 @@ body {
   }
   .navigation {
     flex-flow: column wrap;
+    -webkit-flex-flow: column wrap;
     padding: 0;
   }
   .angular-google-map-container {
@@ -143,11 +166,17 @@ body {
 }
 .flex-container {
   display: flex;
+  display: -webkit-flex;
   flex-direction: row;
   flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -webkit-flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   align-content: flex-start;
+  -webkit-justify-content: space-around;
+  -webkit-align-items: center;
+  -webkit-align-content: flex-start;
 }
 .flex-item-postlist {
   margin: auto;
@@ -169,11 +198,17 @@ body {
 .simple-pagination {
   font-family: 'Oswald';
   display: flex;
+  display: -webkit-flex;
   flex-direction: row;
   flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -webkit-flex-wrap: wrap;
   justify-content: space-between;
   align-items: baseline;
   align-content: center;
+  -webkit-justify-content: space-between;
+  -webkit-align-items: baseline;
+  -webkit-align-content: center;
 }
 .simple-pagination p {
   margin: 0 0.5em 0 0;
@@ -200,7 +235,7 @@ body {
 .blog-post-user,
 .blog-post-comments,
 .about-me-description {
-  font-family: 'PoiretOne';
+  font-family: 'Poiret One';
   color: #3e4a40;
   margin: 0 auto;
   margin-bottom: 0.7em;
@@ -210,7 +245,7 @@ body {
 }
 .subtitle {
   background: #8b8f76;
-  font-family: 'PoiretOne';
+  font-family: 'Poiret One';
   color: #3e4a40;
   padding: 0.2em;
   width: 99%;
@@ -250,9 +285,13 @@ body {
 }
 .container-blog-user {
   display: flex;
+  display: -webkit-flex;
   flex-direction: row;
   flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -webkit-flex-wrap: wrap;
   justify-content: space-around;
+  -webkit-justify-content: space-around;
 }
 .blog-user {
   width: 100%;
@@ -264,7 +303,7 @@ body {
   margin: 0 auto;
 }
 .container-blog-user a {
-  font-family: "PoiretOne";
+  font-family: "Poiret One";
   color: #a57f68;
   display: block;
   text-align: center;
@@ -275,13 +314,19 @@ body {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
+  display: -webkit-flex;
+  -webkit-flex-flow: column wrap;
+  -webkit-justify-content: center;
 }
 .lower-box {
   background: #a57f68;
   padding: 0.7em;
   display: flex;
+  display: -webkit-flex;
   flex-flow: column wrap;
+  -webkit-flex-flow: column wrap;
   justify-content: center;
+  -webkit-justify-content: center;
 }
 .container-blog-user i {
   font-size: 2em;
@@ -299,8 +344,10 @@ body {
 }
 .angular-google-map {
   display: flex;
-  flex-flow: row wrap;
+  display: -webkit-flex;
+  -webkit-flex-flow: row wrap;
   justify-content: center;
+  -webkit-justify-content: center;
 }
 .angular-google-map-container {
   height: 200px;
@@ -308,14 +355,14 @@ body {
 }
 .blog-post-create-title {
   color: #a57f68;
-  font-family: "PoiretOne";
+  font-family: "Poiret One";
   font-weight: bold;
   margin: 0 auto;
 }
 .blog-post-create-input,
 .blog-post-create-select {
   width: 80%;
-  font-family: "PoiretOne";
+  font-family: "Poiret One";
   font-size: 1em;
   padding: 0.5em;
   background: #979a85;
@@ -364,9 +411,13 @@ body {
 }
 .about-me-connections {
   display: flex;
+  display: -webkit-flex;
   flex-direction: row;
   flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -webkit-flex-wrap: wrap;
   justify-content: center;
+  -webkit-justify-content: center;
 }
 .aside-right i {
   color: #3e4a40;
