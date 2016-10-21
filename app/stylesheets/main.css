@@ -37,19 +37,20 @@ img {
 body {
   font-size: 16px;
   background-color: #c4c9a8;
+  font-family: 'Poiret One';
 }
 .wrapper {
-  display: flex;
   display: -webkit-flex;
-  flex-direction: row;
+  display: flex;
   -webkit-flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: row;
   -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 .wrapper > * {
   padding: 10px;
-  flex: 1 100%;
   -webkit-flex: 1 100%;
+  flex: 1 100%;
 }
 .header {
   background: #3e4a40;
@@ -57,30 +58,30 @@ body {
   color: #a57f68;
   font-size: 3em;
   padding: 0 0.3em 0.2em 0.3em;
-  display: flex;
   display: -webkit-flex;
-  flex-direction: row;
+  display: flex;
   -webkit-flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: row;
   -webkit-flex-wrap: wrap;
-  justify-content: space-between;
+  flex-wrap: wrap;
   -webkit-justify-content: space-between;
+  justify-content: space-between;
 }
 .main {
-  flex-flow: row wrap;
   -webkit-flex-flow: row wrap;
-  justify-content: space-around;
+  flex-flow: row wrap;
   -webkit-justify-content: space-around;
+  justify-content: space-around;
 }
 .navigation {
-  display: flex;
   display: -webkit-flex;
-  flex-direction: row;
+  display: flex;
   -webkit-flex-direction: row;
-  flex-wrap: no-wrap;
+  flex-direction: row;
   -webkit-flex-wrap: no-wrap;
-  justify-content: flex-end;
+  flex-wrap: no-wrap;
   -webkit-justify-content: flex-end;
+  justify-content: flex-end;
   margin: 0.2em 0 0 0;
   padding: 0;
 }
@@ -106,30 +107,30 @@ body {
 }
 @media all and (min-width: 480px) {
   .aside-right {
-    flex: 1;
     -webkit-flex: 1;
+    flex: 1;
   }
   .main {
-    order: 2;
-    flex: 3 0px;
-    -webkit-flex: 3 0px;
     -webkit-order: 2;
+    order: 2;
+    -webkit-flex: 3 0px;
+    flex: 3 0px;
   }
   .header {
-    order: 1;
     -webkit-order: 1;
+    order: 1;
   }
   .aside-right {
-    order: 3;
     -webkit-order: 3;
+    order: 3;
   }
   .footer {
-    order: 4;
     -webkit-order: 4;
+    order: 4;
   }
   .navigation {
-    justify-content: space-around;
     -webkit-justify-content: space-around;
+    justify-content: space-around;
   }
 }
 @media all and (min-width: 1024px) {
@@ -144,8 +145,8 @@ body {
 }
 @media all and (max-width: 768px) {
   .header {
-    justify-content: space-around;
     -webkit-justify-content: space-around;
+    justify-content: space-around;
   }
   .angular-google-map-container {
     width: 480px;
@@ -156,8 +157,8 @@ body {
     text-align: center;
   }
   .navigation {
-    flex-flow: column wrap;
     -webkit-flex-flow: column wrap;
+    flex-flow: column wrap;
     padding: 0;
   }
   .angular-google-map-container {
@@ -165,18 +166,18 @@ body {
   }
 }
 .flex-container {
-  display: flex;
   display: -webkit-flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: flex;
   -webkit-flex-direction: row;
+  flex-direction: row;
   -webkit-flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  align-content: flex-start;
+  flex-wrap: wrap;
   -webkit-justify-content: space-around;
+  justify-content: space-around;
   -webkit-align-items: center;
+  align-items: center;
   -webkit-align-content: flex-start;
+  align-content: flex-start;
 }
 .flex-item-postlist {
   margin: auto;
@@ -197,18 +198,18 @@ body {
 }
 .simple-pagination {
   font-family: 'Oswald';
-  display: flex;
   display: -webkit-flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: flex;
   -webkit-flex-direction: row;
+  flex-direction: row;
   -webkit-flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: baseline;
-  align-content: center;
+  flex-wrap: wrap;
   -webkit-justify-content: space-between;
+  justify-content: space-between;
   -webkit-align-items: baseline;
+  align-items: baseline;
   -webkit-align-content: center;
+  align-content: center;
 }
 .simple-pagination p {
   margin: 0 0.5em 0 0;
@@ -284,49 +285,48 @@ body {
   background: url("https://placekitten.com/400/400") repeat scroll 0 0/cover;
 }
 .container-blog-user {
-  display: flex;
   display: -webkit-flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: flex;
   -webkit-flex-direction: row;
+  flex-direction: row;
   -webkit-flex-wrap: wrap;
-  justify-content: space-around;
+  flex-wrap: wrap;
   -webkit-justify-content: space-around;
+  justify-content: space-around;
 }
 .blog-user {
   width: 100%;
 }
 .container-blog-user h1 {
-  font-family: "Oswald";
-  color: #8b8f76;
+  font-family: 'Oswald';
+  color: #7e644b;
   text-align: center;
   margin: 0 auto;
 }
 .container-blog-user a {
-  font-family: "Poiret One";
+  font-family: 'Poiret One';
   color: #a57f68;
   display: block;
   text-align: center;
 }
+.common-box,
+.upper-box,
+.lower-box {
+  padding: 0.7em;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
 .upper-box {
   background: #3e4a40;
-  padding: 0.7em;
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  display: -webkit-flex;
-  -webkit-flex-flow: column wrap;
-  -webkit-justify-content: center;
 }
 .lower-box {
   background: #a57f68;
-  padding: 0.7em;
-  display: flex;
-  display: -webkit-flex;
-  flex-flow: column wrap;
-  -webkit-flex-flow: column wrap;
-  justify-content: center;
-  -webkit-justify-content: center;
 }
 .container-blog-user i {
   font-size: 2em;
@@ -343,26 +343,29 @@ body {
   font-weight: bold;
 }
 .angular-google-map {
-  display: flex;
   display: -webkit-flex;
-  -webkit-flex-flow: row wrap;
-  justify-content: center;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-justify-content: center;
+  justify-content: center;
 }
 .angular-google-map-container {
   height: 200px;
   border: 5px solid #3e4a40;
 }
 .blog-post-create-title {
-  color: #a57f68;
-  font-family: "Poiret One";
+  color: #3e4a40;
+  font-family: 'Poiret One';
   font-weight: bold;
   margin: 0 auto;
 }
 .blog-post-create-input,
 .blog-post-create-select {
   width: 80%;
-  font-family: "Poiret One";
+  font-family: 'Poiret One';
   font-size: 1em;
   padding: 0.5em;
   background: #979a85;
@@ -379,7 +382,7 @@ body {
   width: 100%;
   background: #3e4a40;
   color: #a57f68;
-  font-family: "Oswald";
+  font-family: 'Oswald';
   border: 0;
   padding: 0.3em;
   font-size: 1em;
@@ -388,13 +391,13 @@ body {
   width: 100%;
   background: #808080;
   color: #666;
-  font-family: "Oswald";
+  font-family: 'Oswald';
   border: 0;
   padding: 0.3em;
   font-size: 1em;
 }
 .about-me-title {
-  font-family: "Oswald";
+  font-family: 'Oswald';
   text-align: left;
   color: #3e4a40;
   padding: 0em 1em 0em 1em;
@@ -402,22 +405,24 @@ body {
 .about-me-name {
   display: block;
   text-align: center;
-  font-family: "Oswald";
+  font-family: 'Oswald';
   color: #7e644b;
 }
 .about-me-description p {
+  color: #3e4a40;
   padding: 0em 1em 0em 1em;
-  font-family: "Oswald";
+  font-family: 'Oswald';
+  text-align: center;
 }
 .about-me-connections {
-  display: flex;
   display: -webkit-flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: flex;
   -webkit-flex-direction: row;
+  flex-direction: row;
   -webkit-flex-wrap: wrap;
-  justify-content: center;
+  flex-wrap: wrap;
   -webkit-justify-content: center;
+  justify-content: center;
 }
 .aside-right i {
   color: #3e4a40;

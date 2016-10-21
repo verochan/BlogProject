@@ -1,5 +1,74 @@
 @import 'fonts'
 
+//FONT SIZES
+
+element-boxes-size=1.4em
+title-boxes-size=1.5em
+
+//COLORS
+
+light-green=#C4C9A8
+middle-green=#8b8f76
+dark-green=#3e4a40
+brown=#a57f68
+dark-brown=#7e644b 
+
+//FONTS
+
+title-font='Lobster'
+text-font='Poiret One'
+subtitle-font='Oswald'
+
+//MIXINS
+
+vendor(prop, args)
+    if prop=='display' 
+        if args=='flex'
+            {prop} -webkit- + args
+            {prop} args
+        else
+            {prop} args    
+    else    
+        -webkit-{prop} args
+        {prop} args
+
+display()
+    vendor('display', arguments)   
+
+flex-direction()
+    vendor('flex-direction', arguments)         
+
+flex-wrap()
+    vendor('flex-wrap', arguments)
+
+flexx()
+    vendor('flex', arguments)    
+
+order()
+    vendor('order', arguments)    
+
+justify-content()
+    vendor('justify-content', arguments)  
+
+flex-flow()
+    vendor('flex-flow', arguments)  
+
+align-items()
+    vendor('align-items', arguments)
+
+align-content()
+    vendor('align-content', arguments) 
+
+flex-config()    
+    flex-direction arguments[0]
+    flex-wrap arguments[1]
+    if arguments[2]!='0'
+        justify-content arguments[2]
+    if arguments[3]!='0'
+        align-items arguments[3]
+    if arguments[4]!='0'    
+        align-content arguments[4]  
+
 //BASIC SETTINGS
 
 a 
@@ -25,51 +94,33 @@ img
 
 body
     font-size 16px
-    background-color #C4C9A8 
+    background-color light-green 
+    font-family text-font
 
 .wrapper
     display flex
-    display -webkit-flex
-    flex-direction row
-    -webkit-flex-direction row
-    flex-wrap wrap
-    -webkit-flex-wrap wrap
+    flex-config row wrap 0 0 0
 
 .wrapper > * 
     padding: 10px
-    flex: 1 100%
-    -webkit-flex: 1 100%
+    flexx: 1 100%
 
 .header
-    background #3E4A40
-    font-family 'Lobster'
-    color #A57F68
+    background dark-green
+    font-family title-font
+    color brown
     font-size 3em
     padding 0 0.3em 0.2em 0.3em
     display flex
-    display -webkit-flex
-    flex-direction row
-    -webkit-flex-direction row
-    flex-wrap wrap
-    -webkit-flex-wrap wrap
-    justify-content space-between   
-    -webkit-justify-content space-between 
+    flex-config row wrap space-between 0 0 
 
 .main
     flex-flow row wrap
-    -webkit-flex-flow row wrap
     justify-content space-around
-    -webkit-justify-content space-around
-
+    
 .navigation
     display flex
-    display -webkit-flex
-    flex-direction row
-    -webkit-flex-direction row
-    flex-wrap no-wrap
-    -webkit-flex-wrap no-wrap
-    justify-content flex-end
-    -webkit-justify-content flex-end
+    flex-config row no-wrap flex-end 0 0
     margin 0.2em 0 0 0
     padding 0
 
@@ -78,42 +129,35 @@ body
     text-align center   
     display block
     font-size 0.5em
-    color #8B8F76
+    color middle-green
 
 .navigation a:hover
-    color #A57F68   
+    color brown  
 
 .aside-right
-    background #8B8F76
+    background middle-green
     padding-top 1.5em
 
 .footer
-    background #A57F68
-    color #3E4A40
-    font-family 'Lobster'
+    background brown
+    color dark-green
+    font-family title-font
     text-align center
     
 @media all and (min-width : 480px) 
     .aside-right  
-        flex 1 
-        -webkit-flex 1 
+        flexx 1 
     .main
         order 2
-        flex 3 0px
-        -webkit-flex 3 0px
-        -webkit-order 2
+        flexx 3 0px
     .header
         order 1    
-        -webkit-order 1
     .aside-right  
         order 3 
-        -webkit-order 3
     .footer   
         order 4 
-        -webkit-order 4 
     .navigation
         justify-content space-around
-        -webkit-justify-content space-around
 
 @media all and (min-width: 1024px)
     .angular-google-map-container 
@@ -126,7 +170,6 @@ body
 @media all and (max-width : 768px) 
     .header
         justify-content space-around
-        -webkit-justify-content space-around
     .angular-google-map-container 
         width 480px
 
@@ -135,7 +178,6 @@ body
         text-align center   
     .navigation
         flex-flow column wrap
-        -webkit-flex-flow column wrap
         padding 0
     .angular-google-map-container 
         width 260px    
@@ -144,17 +186,7 @@ body
 
 .flex-container
     display flex
-    display -webkit-flex
-    flex-direction row
-    flex-wrap wrap
-    -webkit-flex-direction row
-    -webkit-flex-wrap wrap
-    justify-content space-around
-    align-items center
-    align-content flex-start
-    -webkit-justify-content space-around
-    -webkit-align-items center
-    -webkit-align-content flex-start
+    flex-config row wrap space-around center flex-start
 
 .flex-item-postlist
     margin: auto
@@ -168,40 +200,30 @@ body
     background-color #979A85
 
 .blog-post-link, .user-link
-    font-family 'Oswald'
+    font-family subtitle-font
     padding 0.5em 0.5em 0.5em 0.5em
 
 //PAGINATOR
 
 .simple-pagination
-    font-family 'Oswald'
+    font-family subtitle-font
     display flex
-    display -webkit-flex
-    flex-direction row
-    flex-wrap wrap  
-    -webkit-flex-direction row
-    -webkit-flex-wrap wrap
-    justify-content space-between
-    align-items baseline
-    align-content center
-    -webkit-justify-content space-between
-    -webkit-align-items baseline
-    -webkit-align-content center
+    flex-config row wrap space-between baseline center
 
 .simple-pagination p
     margin 0 0.5em 0 0   
     
 .simple-pagination__items
-    color #7e644b
+    color dark-brown
 
 .simple-pagination__pages   
-    color #3e4a40
+    color dark-green
 
 .simple-pagination__page-limit a
-    color #3e4a40
+    color dark-green
     
 .simple-pagination__page-limit a:hover
-    color #7e644b    
+    color dark-brown   
 
 .simple-pagination__button
 
@@ -209,12 +231,12 @@ body
 //BLOG POST
 
 .blog-post-header, .blog-post-create-header
-    font-family 'Oswald'
-    color #7E644B   
+    font-family subtitle-font
+    color dark-brown  
 
 .blog-post-body, .blog-post-user, .blog-post-comments, .about-me-description   
-    font-family 'Poiret One' 
-    color #3E4A40
+    font-family text-font 
+    color dark-green
     margin 0 auto
     margin-bottom 0.7em
 
@@ -222,9 +244,9 @@ body
     list-style-type none
 
 .subtitle
-    background #8B8F76
-    font-family 'Poiret One' 
-    color #3E4A40
+    background middle-green
+    font-family text-font 
+    color dark-green
     padding 0.2em
     width 99%
     display block
@@ -266,90 +288,74 @@ body
 
 .container-blog-user
     display flex
-    display -webkit-flex
-    flex-direction row
-    flex-wrap wrap
-    -webkit-flex-direction row
-    -webkit-flex-wrap wrap  
-    justify-content space-around     
-    -webkit-justify-content space-around
+    flex-config row wrap space-around 0 0
 
 .blog-user 
     width 100%
    
 .container-blog-user h1
-    font-family "Oswald"    
-    color #8B8F76
+    font-family subtitle-font   
+    color dark-brown
     text-align center
     margin 0 auto
 
 .container-blog-user a
-    font-family "Poiret One"
-    color #a57f68
+    font-family text-font
+    color brown
     display block
     text-align center
 
-.upper-box
-    background #3e4a40
+.common-box
     padding 0.7em  
     display flex
-    flex-flow column wrap
-    justify-content center
-    display -webkit-flex
-    -webkit-flex-flow column wrap
-    -webkit-justify-content center
+    flex-config column wrap center 0 0    
+
+.upper-box
+    background dark-green
+    @extends .common-box
 
 .lower-box
-    background #a57f68
-    padding 0.7em  
-    display flex
-    display -webkit-flex
-    flex-flow column wrap
-    -webkit-flex-flow column wrap
-    justify-content center
-    -webkit-justify-content center
+    background brown
+    @extends .common-box
 
 .container-blog-user i
     font-size 2em
 
 .button
-    background #3e4a40
+    background dark-green
     width 100%
     padding 1em 0em 1em 0em
     align center
     margin-top 0.7em
 
 .button a
-    color #7E644B
+    color dark-brown
     font-weight bold  
 
 .angular-google-map
     display flex
-    display -webkit-flex
-    -webkit-flex-flow row wrap
-    justify-content center     
-    -webkit-justify-content center        
+    flex-config row wrap center 0 0  
 
 .angular-google-map-container 
     height: 200px 
-    border 5px solid #3e4a40
+    border 5px solid dark-green
 
 //CREATE POST
 
 .blog-post-create-title
-    color #A57F68
-    font-family "Poiret One"
+    color dark-green
+    font-family text-font
     font-weight bold
     margin 0 auto
 
 .blog-post-create-input, .blog-post-create-select
     width 80%   
-    font-family "Poiret One"
+    font-family text-font
     font-size 1em
     padding 0.5em
     background #979a85
     border 0
-    color #3E4A40
+    color dark-green
     margin-top 0.5em
     margin-bottom 0.7em
 
@@ -359,9 +365,9 @@ body
 
 .blog-post-create-button
     width 100%
-    background #3E4A40
-    color #A57F68
-    font-family "Oswald" 
+    background dark-green
+    color brown
+    font-family subtitle-font 
     border 0
     padding 0.3em
     font-size 1em    
@@ -370,7 +376,7 @@ body
     width 100%
     background gray
     color #666666
-    font-family "Oswald" 
+    font-family subtitle-font 
     border 0
     padding 0.3em
     font-size 1em    
@@ -378,38 +384,34 @@ body
 //ABOUT ME
 
 .about-me-title
-    font-family "Oswald"
+    font-family subtitle-font
     text-align left
-    color #3e4a40
+    color dark-green
     padding 0em 1em 0em 1em
 
 .about-me-name
     display block
     text-align center    
-    font-family "Oswald"
-    color #7e644b
+    font-family subtitle-font
+    color dark-brown
 
 .about-me-description p
+    color dark-green
     padding 0em 1em 0em 1em
-    font-family "Oswald"  
+    font-family subtitle-font  
+    text-align center
 
 .about-me-connections
     display flex   
-    display -webkit-flex
-    flex-direction row
-    flex-wrap wrap
-    -webkit-flex-direction row
-    -webkit-flex-wrap wrap
-    justify-content center
-    -webkit-justify-content center
+    flex-config row wrap center 0 0
 
 .aside-right i
-    color #3e4a40
+    color dark-green
     font-size 2.5em   
     margin-right 0.5em  
 
 .aside-right i:hover
-    color #7e644b     
+    color dark-brown     
 
 .about-me-image
     background url('https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAgaAAAAJDE0OTc0ZGRhLTg4MWYtNDI3NC05ZmVhLWY0MjZmNmM5MDM0ZA.jpg') repeat scroll 0 0 / cover  
